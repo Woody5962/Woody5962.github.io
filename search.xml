@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>算法笔记</title>
+    <url>/algrithms/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>博客分区</title>
+    <url>/hello/</url>
+    <content><![CDATA[<p>本博客用于记录并分享学习和工作中遇到的一些算法和见解，欢迎讨论！<br>以下是目前划分的几个板块：</p>
+<h2 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h2><p>用于分享一些机器学习领域之外（非严格定义）的算法，比如常用的一些启发式搜索算法、算法设计思想、插值算法、嵌入算法等。</p>
+<h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><p>用于分享一些机器学习领域的算法和小知识，比如一些教材或课程笔记、集成学习、分类算法、聚类算法、采样算法以及一些零散的知识点。</p>
+<h2 id="时序分析"><a href="#时序分析" class="headerlink" title="时序分析"></a>时序分析</h2><p>用于分享时序分析领域的一些常用算法，比如一些入门知识、时序预测以及一些具体算法和论文分享。</p>
+<h2 id="推荐算法"><a href="#推荐算法" class="headerlink" title="推荐算法"></a>推荐算法</h2><p>用于分享推荐系统的一系列调研和论文分享。</p>
+<h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><p>用于分享CV领域中目标检测和语义分割的一些算法，比如R-CNN系列、DeepLab系列、SNIP等。</p>
+<h2 id="个人工作"><a href="#个人工作" class="headerlink" title="个人工作"></a>个人工作</h2><p>用于分享个人的一些工作，欢迎大家指教！</p>
+]]></content>
+  </entry>
+</search>

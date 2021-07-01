@@ -22,15 +22,21 @@
     var CONFIG = {"hostname":"woody5962.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Woody Tells">
-<meta property="og:url" content="http://woody5962.github.io/archives/index.html">
+  <meta name="description" content="模拟退火算法的思想和算法步骤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟退火算法">
+<meta property="og:url" content="http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Woody Tells">
+<meta property="og:description" content="模拟退火算法的思想和算法步骤">
 <meta property="og:locale">
+<meta property="article:published_time" content="2019-09-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-01T10:56:58.588Z">
 <meta property="article:author" content="Woody">
+<meta property="article:tag" content="启发式算法">
+<meta property="article:tag" content="模拟退火算法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://woody5962.github.io/archives/">
+<link rel="canonical" href="http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/">
 
 
 <script id="page-configurations">
@@ -38,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Archive | Woody Tells</title>
+  <title>模拟退火算法 | Woody Tells</title>
   
 
 
@@ -187,210 +193,99 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 9 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat.jpg">
+      <meta itemprop="name" content="Woody">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Woody Tells">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          模拟退火算法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-22 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-22T00:00:00+08:00">2019-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-01 18:56:58" itemprop="dateModified" datetime="2021-07-01T18:56:58+08:00">2021-07-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">启发式算法</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">模拟退火算法的思想和算法步骤</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-22T00:00:00+08:00"
-              content="2019-09-22">
-          09-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/" itemprop="url">
-            <span itemprop="name">模拟退火算法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-22T00:00:00+08:00"
-              content="2019-09-22">
-          09-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E7%88%AC%E5%B1%B1%E6%B3%95/" itemprop="url">
-            <span itemprop="name">爬山法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-21T00:00:00+08:00"
-              content="2019-09-21">
-          09-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95/" itemprop="url">
-            <span itemprop="name">蚁群算法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-20T00:00:00+08:00"
-              content="2019-09-20">
-          09-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E5%B1%80%E9%83%A8%E6%90%9C%E7%B4%A2/" itemprop="url">
-            <span itemprop="name">局部搜索算法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-20T00:00:00+08:00"
-              content="2019-09-20">
-          09-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E9%9A%8F%E6%9C%BA%E6%90%9C%E7%B4%A2/" itemprop="url">
-            <span itemprop="name">随机搜索算法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-19T00:00:00+08:00"
-              content="2019-09-19">
-          09-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/" itemprop="url">
-            <span itemprop="name">禁忌搜索算法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-19T00:00:00+08:00"
-              content="2019-09-19">
-          09-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/" itemprop="url">
-            <span itemprop="name">粒子群优化算法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-18T00:00:00+08:00"
-              content="2019-09-18">
-          09-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/" itemprop="url">
-            <span itemprop="name">进化算法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-10T00:00:00+08:00"
-              content="2019-09-10">
-          09-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/" itemprop="url">
-            <span itemprop="name">启发式算法概述</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>这个方法来自金属热加工过程的启发。在金属热加工过程中，当金属的温度超过它的熔点（Melting Point）时，原子就会激烈地随机运动。与所有的其它的物理系统相类似，原子的这种运动趋向于寻找其能量的极小状态。在这个能量的变迁过程中，开始时，温度非常高， 使得原子具有很高的能量。随着温度不断降低，金属逐渐冷却，金属中的原子的能量就越来越小，最后达到所有可能的最低点。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>利用模拟退火的时候，让算法从较大的跳跃开始，使到它有足够的“能量”逃离可能“路过”的局部最优解而不至于限制在其中，当它停在全局最优解附近的时候，逐渐的减小跳跃量，以便使其“落脚 ”到全局最优解上。</p>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>从一个问题的原始解开始，用一个变量代表温度，这一温度开始时非常高，而后逐步减低。在每一次迭代期间，算法会随机选中题解中的某个数字，使其发生细微变化，而后计算该解的代价。关键的地方在于计算出该解的代价后，如何决定是否接受该解。<br>如果新的成本更低，则新的题解就会变成当前题解，这与爬山法类似；如果新的成本更高，则新的题解与概率 P 被接受（一开始的时候，T很高，导致P很大，于是就有了足够的能量逃离局部最优）。这一概率会随着温度T的降低而降低。即算法开始时，可以接受表现较差的解，随着退火过程中温度的不断下降，算法越来越不可以接受较差的解，知道最后，它只会接受更优的解。<br>其中P = exp[-（newcost - oldcost）/ T ]<br>其中newcost是新解的成本，oldcost是当前成本，T为当前温度。算法以概率P接受新的解。可见，当温度很高或者新旧解差别很大时，概率P都会很大。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/" rel="tag"># 启发式算法</a>
+              <a href="/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/" rel="tag"># 模拟退火算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E7%88%AC%E5%B1%B1%E6%B3%95/" rel="prev" title="爬山法">
+      <i class="fa fa-chevron-left"></i> 爬山法
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -443,6 +338,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">具体操作</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

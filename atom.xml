@@ -6,7 +6,7 @@
   <link href="http://woody5962.github.io/atom.xml" rel="self"/>
   
   <link href="http://woody5962.github.io/"/>
-  <updated>2021-06-30T16:57:18.257Z</updated>
+  <updated>2021-07-01T10:56:58.588Z</updated>
   <id>http://woody5962.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>模拟退火算法</title>
+    <link href="http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/</id>
+    <published>2019-09-21T16:00:00.000Z</published>
+    <updated>2021-07-01T10:56:58.588Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>这个方法来自金属热加工过程的启发。在金属热加工过程中，当金属的温度超过它的熔点（Melting Point）时，原子就会激烈地随机运动。与所有的其它的物理系统相类似，原子的这种运动趋向于寻找其能量的极小状态。在这个能量的变迁过程中，开始时，温度非常高， 使得原子具有很高的能量。随着温度不断降低，金属逐渐冷却，金属中的原子的能量就越来越小，最后达到所有可能的最低点。</p><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>利用模拟退火的时候，让算法从较大的跳跃开始，使到它有足够的“能量”逃离可能“路过”的局部最优解而不至于限制在其中，当它停在全局最优解附近的时候，逐渐的减小跳跃量，以便使其“落脚 ”到全局最优解上。</p><h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>从一个问题的原始解开始，用一个变量代表温度，这一温度开始时非常高，而后逐步减低。在每一次迭代期间，算法会随机选中题解中的某个数字，使其发生细微变化，而后计算该解的代价。关键的地方在于计算出该解的代价后，如何决定是否接受该解。<br>如果新的成本更低，则新的题解就会变成当前题解，这与爬山法类似；如果新的成本更高，则新的题解与概率 P 被接受（一开始的时候，T很高，导致P很大，于是就有了足够的能量逃离局部最优）。这一概率会随着温度T的降低而降低。即算法开始时，可以接受表现较差的解，随着退火过程中温度的不断下降，算法越来越不可以接受较差的解，知道最后，它只会接受更优的解。<br>其中P = exp[-（newcost - oldcost）/ T ]<br>其中newcost是新解的成本，oldcost是当前成本，T为当前温度。算法以概率P接受新的解。可见，当温度很高或者新旧解差别很大时，概率P都会很大。</p>]]></content>
+    
+    
+    <summary type="html">模拟退火算法的思想和算法步骤</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="模拟退火算法" scheme="http://woody5962.github.io/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬山法</title>
+    <link href="http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/</id>
+    <published>2019-09-21T16:00:00.000Z</published>
+    <updated>2021-07-01T11:02:31.034Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>爬山法假设当前解和周围的解是有变化规律的，如，当前解得下方有一个代价较小的解，则我们就认为，沿着这个方向走，解会越来越小。</p><p>该算法将搜索过程比作爬山过程，在没有任何有关山顶的其他信息的情况下，沿着高度增加的方向爬。如果相邻状态没有比当前值更高，则算法停止，认为当前值即为顶峰。</p><h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><ol><li>设置初始状态n=s0为当前状态;</li><li>如果当前状态已达标，算法结束，搜索成功;</li><li>获取当前状态n的若干个临近状态m,计算这些h(m), nextn=min{h(m)}；</li><li>IF h(n) &gt; h(nextn)<br> THEN  n:=nextn;<br> ELSE 取当前状态为最佳状态并退出;</li><li>GOTO 2步;</li></ol><p>实际操作中：</p><ul><li><p>循环改变解的每一个值产生一个临近解的列表</p></li><li><p>对所有的临近解计算代价并排序，选择代价符合要求的的解</p></li></ul><p>对于单峰来说，必定能找到最优点。</p>]]></content>
+    
+    
+    <summary type="html">爬山法的思想和算法步骤</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="爬山法" scheme="http://woody5962.github.io/tags/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>蚁群算法</title>
@@ -44,7 +90,7 @@
     <link href="http://woody5962.github.io/%E5%B1%80%E9%83%A8%E6%90%9C%E7%B4%A2/"/>
     <id>http://woody5962.github.io/%E5%B1%80%E9%83%A8%E6%90%9C%E7%B4%A2/</id>
     <published>2019-09-19T16:00:00.000Z</published>
-    <updated>2021-06-30T16:57:25.824Z</updated>
+    <updated>2021-07-01T10:50:40.725Z</updated>
     
     <content type="html"><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>总是去找可能含有较优点的子集，最终找到的不一定是最优的点，但是具有较强的局部搜索能力。</p><h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><ol><li>随机选择一个初始的可能解x0 ∈D，xb=x0,P=N(xb)。<br>D是问题的定义域， xb用于记录到目标位置的最优解，P为xb的邻域。</li><li>如果不满足结束条件，则：</li></ol><p>Begin；</p><ul><li>选择P的一个子集P’，xn为P’的最优解。P’可根据问题特点，选择适当大小的子集。可按概率选择；</li><li>如果f(xn)&lt;f(xb)，则xb=xn，P=N(xb)，转2；</li><li>否则P=P-P’，转2；</li></ul><p>End（结束条件为循环次数或P为空等）；</p><ol start="3"><li>输出计算结果；</li><li>结束</li></ol>]]></content>
     
@@ -55,10 +101,37 @@
     
     <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
+    <category term="搜索算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
+    
     
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
-    <category term="局部搜索" scheme="http://woody5962.github.io/tags/%E5%B1%80%E9%83%A8%E6%90%9C%E7%B4%A2/"/>
+    <category term="搜索算法" scheme="http://woody5962.github.io/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随机搜索算法</title>
+    <link href="http://woody5962.github.io/%E9%9A%8F%E6%9C%BA%E6%90%9C%E7%B4%A2/"/>
+    <id>http://woody5962.github.io/%E9%9A%8F%E6%9C%BA%E6%90%9C%E7%B4%A2/</id>
+    <published>2019-09-19T16:00:00.000Z</published>
+    <updated>2021-07-01T10:55:06.018Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于该算法"><a href="#关于该算法" class="headerlink" title="关于该算法"></a>关于该算法</h2><p>随机搜索算法时最简单的优化搜索算法。</p><p>类似于调参过程中的随机搜索，当不知道代价函数在值域范围内的变化规律时，可以使用随机算法对解进行搜索。</p><h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>只适用于代价函数在值域范围内没有任何变化规律的情况，即找不到任何使得代价下降的梯度和极小值点。</p><h2 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h2><p>只需要在值域范围内生成足够多的可行解，然后分别计算每个可行解的代价，根据代价选择一个最小的可行解作为随机搜索的最优解即可。</p>]]></content>
+    
+    
+    <summary type="html">随机搜索的简介</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="搜索算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="搜索算法" scheme="http://woody5962.github.io/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -67,7 +140,7 @@
     <link href="http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/"/>
     <id>http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/</id>
     <published>2019-09-18T16:00:00.000Z</published>
-    <updated>2021-06-30T16:57:29.957Z</updated>
+    <updated>2021-07-01T10:50:18.542Z</updated>
     
     <content type="html"><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p><img src="../images/jinji1.png" alt="jinji"><br>通过保持一个禁忌表，以禁忌长度进行禁忌，遵守禁忌准则和藐视准则进行全局搜索。</p><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>首先，我们对置换问题定义一种邻域搜索结构，如互换操作（SWAP），即随机交换两个点的位置，则每个状态的邻域解有Cn2=n（n一1）/2个。称从一个状态转移到其邻域中的另一个状态为一次移动（move），显然每次移动将导致适配值（反比于目标函数值）的变化。其次，我们采用一个存储结构来区分移动的属性，即是否为禁忌“对象”在以下示例中：考虑7元素的置换问题，并用每一状态的相应21个邻域解中最优的5次移动（对应最佳的5个适配值）作为候选解；为一定程度上防止迂回搜索，每个被采纳的移动在禁忌表中将滞留3步（即禁忌长度），即将移动在以下连续3步搜索中将被视为禁忌对象；需要指出的是，由于当前的禁忌对象对应状态的适配值可能很好，因此在算法中设置判断，若禁忌对象对应的适配值优于“ best so far”状态，则无视其禁忌属性而仍采纳其为当前选择，也就是通常所说的藐视准则（或称特赦准则）。<br>注意，出于改善算法的优化时间性能的考虑，若领域结构决定了大量的领域解（尤其对大规模问题，如TSP的SWAP操作将产生Cn2个领域解），则可以仅尝试部分互换的结果，而候选解也仅取其中的少量最佳状态。</p><h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>简单TS算法的基本思想是：给定一个当前解（初始解）和一种邻域，然后在当前解的邻域中确定若干候选解；若最佳候选解对应的目标值优于“best so far”状态，则忽视其禁忌特性，用其替代当前解和“best so far”状态，并将相应的对象加入禁忌表，同时修改禁忌表中各对象的任期；若不存在上述候选解，则选择在候选解中选择非禁忌的最佳状态为新的当前解，而无视它与当前解的优劣，同时将相应的对象加入禁忌表，并修改禁忌表中各对象的任期；如此重复上述迭代搜索过程，直至满足停止准则。</p><p>　　条理化些，则简单禁忌搜索的算法步骤可描述如下：</p><p>　　（1）给定算法参数，随机产生初始解x，置禁忌表为空。</p><p>　　（2）判断算法终止条件是否满足？若是，则结束算法并输出优化结果；否则，继续以下步骤。</p><p>　　（3）利用当前解工的邻域函数产生其所有（或若干）邻域解，并从中确定若干候选解。</p><p>　　（4）对候选解判断藐视准则是否满足？若成立，则用满足藐视准则的最佳状态y替代x成为新的当前解，即x=y，并用与y对应的禁忌对象替换最早进入禁忌表的禁忌对象，同时用y替换“best so far”状态，然后转步骤6；否则，继续以下步骤。</p><p>　　（5）判断候选解对应的各对象的禁忌属性，选择候选解集中非禁忌对象对应的最佳状态为新的当前解，同时用与之对应的禁忌对象替换最早进入禁忌表的禁忌对象元素。</p><p>　　（6）转步骤（2）。</p><p>注意，根据（5）可知，最牛逼的解根本就不考虑它是不是在禁忌列表中，如果这些候选解都很弟弟，那就找非禁忌里面最优的了。这样，既可以保证不遗漏全局最优，又有利于跳出局部最优。</p>]]></content>
     
@@ -78,10 +151,12 @@
     
     <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
+    <category term="搜索算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
+    
     
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
-    <category term="禁忌搜索" scheme="http://woody5962.github.io/tags/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/"/>
+    <category term="搜索算法" scheme="http://woody5962.github.io/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

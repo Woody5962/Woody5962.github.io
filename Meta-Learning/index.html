@@ -22,15 +22,27 @@
     var CONFIG = {"hostname":"woody5962.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Woody Tells">
-<meta property="og:url" content="http://woody5962.github.io/archives/2020/09/index.html">
+  <meta name="description" content="元学习简介及其与传统机器学习、迁移学习的区别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="元学习简介">
+<meta property="og:url" content="http://woody5962.github.io/Meta-Learning/index.html">
 <meta property="og:site_name" content="Woody Tells">
+<meta property="og:description" content="元学习简介及其与传统机器学习、迁移学习的区别">
 <meta property="og:locale">
+<meta property="og:image" content="http://woody5962.github.io/images/ml1.png">
+<meta property="og:image" content="http://woody5962.github.io/images/ml2.png">
+<meta property="og:image" content="http://woody5962.github.io/images/ml3.png">
+<meta property="og:image" content="http://woody5962.github.io/images/ml4.png">
+<meta property="og:image" content="http://woody5962.github.io/images/ml5.png">
+<meta property="article:published_time" content="2021-03-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-01T14:52:18.627Z">
 <meta property="article:author" content="Woody">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="元学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://woody5962.github.io/images/ml1.png">
 
-<link rel="canonical" href="http://woody5962.github.io/archives/2020/09/">
+<link rel="canonical" href="http://woody5962.github.io/Meta-Learning/">
 
 
 <script id="page-configurations">
@@ -38,12 +50,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Archive | Woody Tells</title>
+  <title>元学习简介 | Woody Tells</title>
   
 
 
@@ -187,50 +199,113 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 12 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://woody5962.github.io/Meta-Learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat.jpg">
+      <meta itemprop="name" content="Woody">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Woody Tells">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          元学习简介
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-03-10 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-10T00:00:00+08:00">2021-03-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-01 22:52:18" itemprop="dateModified" datetime="2021-07-01T22:52:18+08:00">2021-07-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%83%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">元学习</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">元学习简介及其与传统机器学习、迁移学习的区别</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>说白了，就是学习一个meta- knowledge，使用这个knowledge去快速适应新的任务。</p>
+<p>即，学习怎么去学习。</p>
+<h2 id="与传统机器学习的区别"><a href="#与传统机器学习的区别" class="headerlink" title="与传统机器学习的区别"></a>与传统机器学习的区别</h2><p>这里学习的目标是一个meta-knowledge，feed的不是数据而是任务，分为train task和test task，而每一个task内部有训练数据和测试数据，分别叫做support set和query set。相对应的，在测试中输出的并不是对support set的计算结果，而是一个针对测试task的f，在测试task的query set上可以得到f（data）</p>
+<p><img src="../images/ml1.png" alt="ml"></p>
+<h2 id="与迁移学习的区别"><a href="#与迁移学习的区别" class="headerlink" title="与迁移学习的区别"></a>与迁移学习的区别</h2><ol>
+<li>这里有专门的meta-net，对不同的task会专门使用meta-net初始化一套specific task net，在task net中更新参数，然后利用更新之后的参数进行损失计算并回传更新（可以1步，可以k步，步数越少越符合我们的使用目标，就是可以使meta-net生成的模型更快的适应task），此时再对meta-net中的参数进行同方向的更新，目的是使训练过程和使用目的一致，而使用目的正是能够对新的任务生成f，f能够快速适应该任务，在之后产生不错的效果，但并不是追求当下的效果。</li>
+</ol>
+<p>下图分别展示了maml和reptile的meta-learning框架：</p>
+<p><img src="../images/ml2.png" alt="ml"><br><img src="../images/ml3.png" alt="ml"></p>
+<ol start="2">
+<li>迁移学习使用同一套参数，并不会针对专门的任务另外初始化一套网络，每一个任务的损失都直接影响model param，目的是得到当下的最优，也就是针对新任务可以直接有较优的结果。</li>
+</ol>
+<p><img src="../images/ml4.png" alt="ml"><br><img src="../images/ml5.png" alt="ml"></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-09-10T00:00:00+08:00"
-              content="2020-09-10">
-          09-10
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/%E5%85%83%E5%AD%A6%E4%B9%A0/" rel="tag"># 元学习</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">集成学习概述</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" rel="prev" title="集成学习概述">
+      <i class="fa fa-chevron-left"></i> 集成学习概述
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -283,6 +358,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">与传统机器学习的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">与迁移学习的区别</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

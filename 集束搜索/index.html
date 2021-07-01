@@ -22,19 +22,23 @@
     var CONFIG = {"hostname":"woody5962.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本博客用于记录并分享学习和工作中遇到的一些算法和见解，欢迎讨论！以下是目前划分的几个板块： 算法笔记用于分享一些机器学习领域之外（非严格定义）的算法，比如常用的一些启发式搜索算法、算法设计思想、插值算法、嵌入算法等。 机器学习用于分享一些机器学习领域的算法和小知识，比如一些教材或课程笔记、集成学习、分类算法、聚类算法、采样算法以及一些零散的知识点。 时序分析用于分享时序分析领域的一些常用算法，比如">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于本博客的板块划分">
-<meta property="og:url" content="http://woody5962.github.io/about/index.html">
+  <meta name="description" content="集束搜索的思想和算法步骤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集束搜索">
+<meta property="og:url" content="http://woody5962.github.io/%E9%9B%86%E6%9D%9F%E6%90%9C%E7%B4%A2/index.html">
 <meta property="og:site_name" content="Woody Tells">
-<meta property="og:description" content="本博客用于记录并分享学习和工作中遇到的一些算法和见解，欢迎讨论！以下是目前划分的几个板块： 算法笔记用于分享一些机器学习领域之外（非严格定义）的算法，比如常用的一些启发式搜索算法、算法设计思想、插值算法、嵌入算法等。 机器学习用于分享一些机器学习领域的算法和小知识，比如一些教材或课程笔记、集成学习、分类算法、聚类算法、采样算法以及一些零散的知识点。 时序分析用于分享时序分析领域的一些常用算法，比如">
+<meta property="og:description" content="集束搜索的思想和算法步骤">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-06-30T10:31:12.000Z">
-<meta property="article:modified_time" content="2021-06-30T15:39:59.482Z">
+<meta property="og:image" content="http://woody5962.github.io/images/jishu1.png">
+<meta property="article:published_time" content="2019-09-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-01T12:41:18.121Z">
 <meta property="article:author" content="Woody">
+<meta property="article:tag" content="启发式算法">
+<meta property="article:tag" content="搜索算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://woody5962.github.io/images/jishu1.png">
 
-<link rel="canonical" href="http://woody5962.github.io/about/">
+<link rel="canonical" href="http://woody5962.github.io/%E9%9B%86%E6%9D%9F%E6%90%9C%E7%B4%A2/">
 
 
 <script id="page-configurations">
@@ -42,13 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>关于本博客的板块划分 | Woody Tells
-</title>
+  <title>集束搜索 | Woody Tells</title>
   
 
 
@@ -191,50 +194,116 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-Hans">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://woody5962.github.io/%E9%9B%86%E6%9D%9F%E6%90%9C%E7%B4%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat.jpg">
+      <meta itemprop="name" content="Woody">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Woody Tells">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          集束搜索
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">关于本博客的板块划分
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
-<div class="post-meta">
+              <time title="Created: 2019-09-24 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-24T00:00:00+08:00">2019-09-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-01 20:41:18" itemprop="dateModified" datetime="2021-07-01T20:41:18+08:00">2021-07-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">启发式算法</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">搜索算法</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">集束搜索的思想和算法步骤</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>举例说明，在NLP领域中，经常会涉及机器翻译结果的搜索，比如在decoder中，我们可以使用贪心策略每次选择softmax值最高的，但是由于贪心解往往达不到最优，所以我们放松贪心约束，每次选择最优的k个，k便是集束宽度，这样对解的搜索叫做集束搜索。</p>
+<h2 id="过程示例"><a href="#过程示例" class="headerlink" title="过程示例"></a>过程示例</h2><p>假设字典为[a,b,c]，beam size选择2，则如下图有：</p>
+<p><img src="../images/jishu1.png" alt="jishu"></p>
+<ol>
+<li><p>在生成第1个词的时候，选择概率最大的2个词，那么当前序列就是a或b</p>
+</li>
+<li><p>生成第2个词的时候，我们将当前序列a或b，分别与字典中的所有词进行组合，得到新的6个序列aa ab ac ba bb bc,然后从其中选择2个概率最高的，作为当前序列，即ab或bb</p>
+</li>
+</ol>
+<p>不断重复这个过程，直到遇到结束符为止。最终输出2个概率最高的序列。</p>
+<p>显然集束搜索属于贪心算法，不能保证一定能够找到全局最优解，因为考虑到搜索空间太大，而采用一个相对的较优解。</p>
+<p>而贪心搜索由于每次考虑当下词的概率，而通常英文中有些常用结构，比如吴恩达网课中的例子：“is going”，出现概率较大，会导致模型最终生成的句子过于冗余，如“is visiting”和“is going to be visiting”。</p>
+<p>贪心搜索可以认为beam size为1时的集束搜索特例。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/" rel="tag"># 启发式算法</a>
+              <a href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag"># 搜索算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E7%88%AC%E5%B1%B1%E6%B3%95/" rel="prev" title="爬山法">
+      <i class="fa fa-chevron-left"></i> 爬山法
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <p>本博客用于记录并分享学习和工作中遇到的一些算法和见解，欢迎讨论！<br>以下是目前划分的几个板块：</p>
-<h2 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h2><p>用于分享一些机器学习领域之外（非严格定义）的算法，比如常用的一些启发式搜索算法、算法设计思想、插值算法、嵌入算法等。</p>
-<h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><p>用于分享一些机器学习领域的算法和小知识，比如一些教材或课程笔记、集成学习、分类算法、聚类算法、采样算法以及一些零散的知识点。</p>
-<h2 id="时序分析"><a href="#时序分析" class="headerlink" title="时序分析"></a>时序分析</h2><p>用于分享时序分析领域的一些常用算法，比如一些入门知识、时序预测以及一些具体算法和论文分享。</p>
-<h2 id="推荐算法"><a href="#推荐算法" class="headerlink" title="推荐算法"></a>推荐算法</h2><p>用于分享推荐系统的一系列调研和论文分享。</p>
-<h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><p>用于分享CV领域中目标检测和语义分割的一些算法，比如R-CNN系列、DeepLab系列、SNIP等。</p>
-<h2 id="个人工作"><a href="#个人工作" class="headerlink" title="个人工作"></a>个人工作</h2><p>用于分享个人的一些工作，欢迎大家指教！</p>
-
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -285,7 +354,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">算法笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="nav-number">2.</span> <span class="nav-text">机器学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">时序分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">推荐算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B"><span class="nav-number">5.</span> <span class="nav-text">目标检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E5%B7%A5%E4%BD%9C"><span class="nav-number">6.</span> <span class="nav-text">个人工作</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">过程示例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -6,7 +6,7 @@
   <link href="http://woody5962.github.io/atom.xml" rel="self"/>
   
   <link href="http://woody5962.github.io/"/>
-  <updated>2021-07-01T10:56:58.588Z</updated>
+  <updated>2021-07-01T12:41:18.121Z</updated>
   <id>http://woody5962.github.io/</id>
   
   <author>
@@ -17,25 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>模拟退火算法</title>
-    <link href="http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
-    <id>http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/</id>
-    <published>2019-09-21T16:00:00.000Z</published>
-    <updated>2021-07-01T10:56:58.588Z</updated>
+    <title>集束搜索</title>
+    <link href="http://woody5962.github.io/%E9%9B%86%E6%9D%9F%E6%90%9C%E7%B4%A2/"/>
+    <id>http://woody5962.github.io/%E9%9B%86%E6%9D%9F%E6%90%9C%E7%B4%A2/</id>
+    <published>2019-09-23T16:00:00.000Z</published>
+    <updated>2021-07-01T12:41:18.121Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>这个方法来自金属热加工过程的启发。在金属热加工过程中，当金属的温度超过它的熔点（Melting Point）时，原子就会激烈地随机运动。与所有的其它的物理系统相类似，原子的这种运动趋向于寻找其能量的极小状态。在这个能量的变迁过程中，开始时，温度非常高， 使得原子具有很高的能量。随着温度不断降低，金属逐渐冷却，金属中的原子的能量就越来越小，最后达到所有可能的最低点。</p><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>利用模拟退火的时候，让算法从较大的跳跃开始，使到它有足够的“能量”逃离可能“路过”的局部最优解而不至于限制在其中，当它停在全局最优解附近的时候，逐渐的减小跳跃量，以便使其“落脚 ”到全局最优解上。</p><h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>从一个问题的原始解开始，用一个变量代表温度，这一温度开始时非常高，而后逐步减低。在每一次迭代期间，算法会随机选中题解中的某个数字，使其发生细微变化，而后计算该解的代价。关键的地方在于计算出该解的代价后，如何决定是否接受该解。<br>如果新的成本更低，则新的题解就会变成当前题解，这与爬山法类似；如果新的成本更高，则新的题解与概率 P 被接受（一开始的时候，T很高，导致P很大，于是就有了足够的能量逃离局部最优）。这一概率会随着温度T的降低而降低。即算法开始时，可以接受表现较差的解，随着退火过程中温度的不断下降，算法越来越不可以接受较差的解，知道最后，它只会接受更优的解。<br>其中P = exp[-（newcost - oldcost）/ T ]<br>其中newcost是新解的成本，oldcost是当前成本，T为当前温度。算法以概率P接受新的解。可见，当温度很高或者新旧解差别很大时，概率P都会很大。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>举例说明，在NLP领域中，经常会涉及机器翻译结果的搜索，比如在decoder中，我们可以使用贪心策略每次选择softmax值最高的，但是由于贪心解往往达不到最优，所以我们放松贪心约束，每次选择最优的k个，k便是集束宽度，这样对解的搜索叫做集束搜索。</p><h2 id="过程示例"><a href="#过程示例" class="headerlink" title="过程示例"></a>过程示例</h2><p>假设字典为[a,b,c]，beam size选择2，则如下图有：</p><p><img src="../images/jishu1.png" alt="jishu"></p><ol><li><p>在生成第1个词的时候，选择概率最大的2个词，那么当前序列就是a或b</p></li><li><p>生成第2个词的时候，我们将当前序列a或b，分别与字典中的所有词进行组合，得到新的6个序列aa ab ac ba bb bc,然后从其中选择2个概率最高的，作为当前序列，即ab或bb</p></li></ol><p>不断重复这个过程，直到遇到结束符为止。最终输出2个概率最高的序列。</p><p>显然集束搜索属于贪心算法，不能保证一定能够找到全局最优解，因为考虑到搜索空间太大，而采用一个相对的较优解。</p><p>而贪心搜索由于每次考虑当下词的概率，而通常英文中有些常用结构，比如吴恩达网课中的例子：“is going”，出现概率较大，会导致模型最终生成的句子过于冗余，如“is visiting”和“is going to be visiting”。</p><p>贪心搜索可以认为beam size为1时的集束搜索特例。</p>]]></content>
     
     
-    <summary type="html">模拟退火算法的思想和算法步骤</summary>
+    <summary type="html">集束搜索的思想和算法步骤</summary>
     
     
     
     <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
+    <category term="搜索算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
+    
     
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
-    <category term="模拟退火算法" scheme="http://woody5962.github.io/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
+    <category term="搜索算法" scheme="http://woody5962.github.io/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -59,6 +61,29 @@
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
     <category term="爬山法" scheme="http://woody5962.github.io/tags/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>模拟退火算法</title>
+    <link href="http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/</id>
+    <published>2019-09-21T16:00:00.000Z</published>
+    <updated>2021-07-01T10:56:58.588Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>这个方法来自金属热加工过程的启发。在金属热加工过程中，当金属的温度超过它的熔点（Melting Point）时，原子就会激烈地随机运动。与所有的其它的物理系统相类似，原子的这种运动趋向于寻找其能量的极小状态。在这个能量的变迁过程中，开始时，温度非常高， 使得原子具有很高的能量。随着温度不断降低，金属逐渐冷却，金属中的原子的能量就越来越小，最后达到所有可能的最低点。</p><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>利用模拟退火的时候，让算法从较大的跳跃开始，使到它有足够的“能量”逃离可能“路过”的局部最优解而不至于限制在其中，当它停在全局最优解附近的时候，逐渐的减小跳跃量，以便使其“落脚 ”到全局最优解上。</p><h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>从一个问题的原始解开始，用一个变量代表温度，这一温度开始时非常高，而后逐步减低。在每一次迭代期间，算法会随机选中题解中的某个数字，使其发生细微变化，而后计算该解的代价。关键的地方在于计算出该解的代价后，如何决定是否接受该解。<br>如果新的成本更低，则新的题解就会变成当前题解，这与爬山法类似；如果新的成本更高，则新的题解与概率 P 被接受（一开始的时候，T很高，导致P很大，于是就有了足够的能量逃离局部最优）。这一概率会随着温度T的降低而降低。即算法开始时，可以接受表现较差的解，随着退火过程中温度的不断下降，算法越来越不可以接受较差的解，知道最后，它只会接受更优的解。<br>其中P = exp[-（newcost - oldcost）/ T ]<br>其中newcost是新解的成本，oldcost是当前成本，T为当前温度。算法以概率P接受新的解。可见，当温度很高或者新旧解差别很大时，概率P都会很大。</p>]]></content>
+    
+    
+    <summary type="html">模拟退火算法的思想和算法步骤</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="模拟退火算法" scheme="http://woody5962.github.io/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -136,6 +161,29 @@
   </entry>
   
   <entry>
+    <title>粒子群优化算法</title>
+    <link href="http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</id>
+    <published>2019-09-18T16:00:00.000Z</published>
+    <updated>2021-06-30T16:57:34.224Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p><p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p><h2 id="核心公式"><a href="#核心公式" class="headerlink" title="核心公式"></a>核心公式</h2><p><img src="../images/pso1.png" alt="gs"></p><h2 id="参数解释"><a href="#参数解释" class="headerlink" title="参数解释"></a>参数解释</h2><p><img src="../images/pso2.png" alt="gs"></p><h2 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h2><p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>]]></content>
+    
+    
+    <summary type="html">粒子群优化算法的背景、原理以及一些个人理解</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="粒子群算法" scheme="http://woody5962.github.io/tags/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>禁忌搜索算法</title>
     <link href="http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/"/>
     <id>http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/</id>
@@ -157,29 +205,6 @@
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
     <category term="搜索算法" scheme="http://woody5962.github.io/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>粒子群优化算法</title>
-    <link href="http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
-    <id>http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</id>
-    <published>2019-09-18T16:00:00.000Z</published>
-    <updated>2021-06-30T16:57:34.224Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p><p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p><h2 id="核心公式"><a href="#核心公式" class="headerlink" title="核心公式"></a>核心公式</h2><p><img src="../images/pso1.png" alt="gs"></p><h2 id="参数解释"><a href="#参数解释" class="headerlink" title="参数解释"></a>参数解释</h2><p><img src="../images/pso2.png" alt="gs"></p><h2 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h2><p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>]]></content>
-    
-    
-    <summary type="html">粒子群优化算法的背景、原理以及一些个人理解</summary>
-    
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="粒子群算法" scheme="http://woody5962.github.io/tags/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

@@ -42,6 +42,31 @@
   </entry>
   
   <entry>
+    <title>经典分类算法</title>
+    <link href="http://woody5962.github.io/%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/</id>
+    <published>2020-10-09T16:00:00.000Z</published>
+    <updated>2021-07-02T15:47:09.113Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="经典分类算法"><a href="#经典分类算法" class="headerlink" title="经典分类算法"></a>经典分类算法</h2><p><img src="../images/fl1.png" alt="fl"></p><h3 id="贝叶斯方法体系"><a href="#贝叶斯方法体系" class="headerlink" title="贝叶斯方法体系"></a>贝叶斯方法体系</h3><ol><li>朴素贝叶斯</li></ol><ul><li>假设所有特征是独立的，无相互作用，可直接通过先验概率去计算后验概率。</li></ul><ol start="2"><li>半朴素贝叶斯</li></ol><ul><li>适当考虑一部分属性间的相互依赖信息。</li><li>典型的是独依赖估计 </li></ul><ol start="3"><li>贝叶斯网</li></ol><ul><li>也叫信念网（belief network）</li><li>借助有向无环图来刻画属性之间的依赖关系，使用条件概率表来描述属性的联合概率分布。</li><li>贝叶斯网络的大致原理是构造各维特征之间的依赖网络（通过某种基于信息论准则的学习过程构建），然后根据学习到的贝叶斯网络B（G，P）通过Gibbs采样来模拟类别概率。</li></ul><h2 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h2><p>最简单的一种分类思路，利用样本点周围样本的类别来做分类，唯一需要调整的参数就是所用邻居样本点的数目k。</p><p><img src="../images/fl2.png" alt="fl"></p><p>另外，根据不同的数据特点确定距离度量也至关重要。</p><h3 id="常见的距离度量"><a href="#常见的距离度量" class="headerlink" title="常见的距离度量"></a>常见的距离度量</h3><ul><li>Minkowski-distance</li><li>Cosine similarity</li><li>Jaccard similarity</li><li>KL-divergence</li></ul><h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><p>分类使用的决策树根据不同的启发函数进行分枝，启发函数使用的一般都是信息论中的度量，比如信息增益、GINI不纯度的等等。</p><p>根据所用启发函数的区别，常用的三类决策树为：</p><ol><li>ID3: 使用信息增益</li><li>C4.5: 使用信息增益比，解决ID3对于多取值特征的倾向性。</li><li>CART：使用GINI不纯度</li></ol><h3 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h3><h4 id="预剪枝"><a href="#预剪枝" class="headerlink" title="预剪枝"></a>预剪枝</h4><p>在建树过程中，根据一些预定义的限制条件进行剪枝，比如树的最大深度、叶子结点的最少样本数、分枝后的增益等等。</p><p>要主要的是，预剪枝有欠拟合风险，虽然当前的划分会导测准确率降低但在之后的划分中准确率可能会有显著上升。</p><h4 id="后剪枝"><a href="#后剪枝" class="headerlink" title="后剪枝"></a>后剪枝</h4><p>后剪枝是在建树完成之后，对完整的决策树进行剪枝，在实际使用中效果一般会优于预剪枝，当然也会更耗时。</p><p>其根据剪枝之后精度损失和复杂度做一个权衡，根据权衡标准选择是否剪枝。</p><p>后剪枝都会损失精度，但是为了提升模型的泛化性，我们也可以在接受一定损失的情况下去做剪枝。</p><p>比如代价复杂度剪枝CCP，思想就是看去掉之后的节点之后，模型损失的精度和精简的复杂度之间的权衡，找一个在一定精度损失的情况下，可精简复杂度最高的。</p><h2 id="朴素贝叶斯分类器"><a href="#朴素贝叶斯分类器" class="headerlink" title="朴素贝叶斯分类器"></a>朴素贝叶斯分类器</h2><p><img src="../images/fl3.png" alt="fl"></p><p>核心是将要求的条件概率转换为右边容易求的三个概率，尤其是分子的式子（因为分母是固定的），将其最大化，即bayes分类模型。</p><p>然后，做一个很朴素的假设，假设X的取值是条件独立的，即：</p><p><img src="../images/fl4.png" alt="fl"></p><p>这样的话，可以通过MLE（maximum liklihood estimate,极大似然估计）得到贝叶斯估计的分类结果，若为连续变量，则进行离散化，依旧使用上述方法：</p><p><img src="../images/fl5.png" alt="fl"></p><h2 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h2><p>基本思想：最大化类别之间的margin</p><p>算法推导思想：将最大化类别之间margin的目标函数使用拉格朗日方法进行转化，使用SMO算法对其对偶问题进行求解。</p><p>当数据线性可分时，我们直接使用线性SVM即可，否则可以通过核方法对其进行映射，得到高维空间的线性可分数据。</p><h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>直接对分类的概率进行建模，使用MLE进行模型参数的求解即可。</p><p>最后直接就可以通过自变量x得到分类y=k的概率。</p><p><img src="../images/fl6.png" alt="fl"></p><p>z就是一个回归模型，但是回归的并不是概率，而是分类几率的对数，所谓几率就是二分类中两种分类概率的比值，如下所示：</p><p><img src="../images/fl7.png" alt="fl"></p><h2 id="分类模型的评估"><a href="#分类模型的评估" class="headerlink" title="分类模型的评估"></a>分类模型的评估</h2><p>在分类问题中，我们将数据进行如下划分：</p><p><img src="../images/fl10.png" alt="fl"></p><h3 id="precision"><a href="#precision" class="headerlink" title="precision"></a>precision</h3><p>准确率，即所有分为positive的样本中，真正positive的比例。</p><h3 id="recall"><a href="#recall" class="headerlink" title="recall"></a>recall</h3><p>召回率，即所有真正的positive样本中，被正确分为positive的比例。</p><h3 id="f1-score"><a href="#f1-score" class="headerlink" title="f1 score"></a>f1 score</h3><p>准确率和召回率的调和平均数，兼顾二者的表现。</p><h3 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h3><p><img src="../images/fl8.png" alt="fl"></p><h3 id="ROC和AUC"><a href="#ROC和AUC" class="headerlink" title="ROC和AUC"></a>ROC和AUC</h3><p>AUC：一个正例预测为正的概率值大于负例预测为正的概率。</p><p>表现在图像上就是ROC曲线下的面积。</p><p><img src="../images/fl9.png" alt="fl"></p><p>图像上每一个点都对应一个阈值。随着阈值不断减小，TPR和FPR都不断增大，反之不断减小。</p><p>AUC是一种较为稳健的评估方式，尤其是在数据失衡的情况下，f1会非常容易受到样本比例的影响，比如正样本占绝大多数时，可能一个愚蠢的模型会将所有的样本划分为正样本，也不会对f1造成多大的影响，但是AUC会敏感的察觉到这种愚蠢的模型。</p>]]></content>
+    
+    
+    <summary type="html">总结一下机器学习领域几种经典的分类算法，包括SVM、KNN、决策树、逻辑回归等等。</summary>
+    
+    
+    
+    <category term="机器学习" scheme="http://woody5962.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="分类算法" scheme="http://woody5962.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="机器学习" scheme="http://woody5962.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="分类算法" scheme="http://woody5962.github.io/tags/%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>集成学习概述</title>
     <link href="http://woody5962.github.io/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/"/>
     <id>http://woody5962.github.io/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/</id>
@@ -92,29 +117,6 @@
   </entry>
   
   <entry>
-    <title>爬山法</title>
-    <link href="http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
-    <id>http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/</id>
-    <published>2019-09-21T16:00:00.000Z</published>
-    <updated>2021-07-01T11:02:31.034Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>爬山法假设当前解和周围的解是有变化规律的，如，当前解得下方有一个代价较小的解，则我们就认为，沿着这个方向走，解会越来越小。</p><p>该算法将搜索过程比作爬山过程，在没有任何有关山顶的其他信息的情况下，沿着高度增加的方向爬。如果相邻状态没有比当前值更高，则算法停止，认为当前值即为顶峰。</p><h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><ol><li>设置初始状态n=s0为当前状态;</li><li>如果当前状态已达标，算法结束，搜索成功;</li><li>获取当前状态n的若干个临近状态m,计算这些h(m), nextn=min{h(m)}；</li><li>IF h(n) &gt; h(nextn)<br> THEN  n:=nextn;<br> ELSE 取当前状态为最佳状态并退出;</li><li>GOTO 2步;</li></ol><p>实际操作中：</p><ul><li><p>循环改变解的每一个值产生一个临近解的列表</p></li><li><p>对所有的临近解计算代价并排序，选择代价符合要求的的解</p></li></ul><p>对于单峰来说，必定能找到最优点。</p>]]></content>
-    
-    
-    <summary type="html">爬山法的思想和算法步骤</summary>
-    
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="爬山法" scheme="http://woody5962.github.io/tags/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>模拟退火算法</title>
     <link href="http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
     <id>http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/</id>
@@ -134,6 +136,29 @@
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
     <category term="模拟退火算法" scheme="http://woody5962.github.io/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬山法</title>
+    <link href="http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/</id>
+    <published>2019-09-21T16:00:00.000Z</published>
+    <updated>2021-07-01T11:02:31.034Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>爬山法假设当前解和周围的解是有变化规律的，如，当前解得下方有一个代价较小的解，则我们就认为，沿着这个方向走，解会越来越小。</p><p>该算法将搜索过程比作爬山过程，在没有任何有关山顶的其他信息的情况下，沿着高度增加的方向爬。如果相邻状态没有比当前值更高，则算法停止，认为当前值即为顶峰。</p><h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><ol><li>设置初始状态n=s0为当前状态;</li><li>如果当前状态已达标，算法结束，搜索成功;</li><li>获取当前状态n的若干个临近状态m,计算这些h(m), nextn=min{h(m)}；</li><li>IF h(n) &gt; h(nextn)<br> THEN  n:=nextn;<br> ELSE 取当前状态为最佳状态并退出;</li><li>GOTO 2步;</li></ol><p>实际操作中：</p><ul><li><p>循环改变解的每一个值产生一个临近解的列表</p></li><li><p>对所有的临近解计算代价并排序，选择代价符合要求的的解</p></li></ul><p>对于单峰来说，必定能找到最优点。</p>]]></content>
+    
+    
+    <summary type="html">爬山法的思想和算法步骤</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="爬山法" scheme="http://woody5962.github.io/tags/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
     
   </entry>
   
@@ -211,6 +236,29 @@
   </entry>
   
   <entry>
+    <title>粒子群优化算法</title>
+    <link href="http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</id>
+    <published>2019-09-18T16:00:00.000Z</published>
+    <updated>2021-06-30T16:57:34.224Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p><p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p><h2 id="核心公式"><a href="#核心公式" class="headerlink" title="核心公式"></a>核心公式</h2><p><img src="../images/pso1.png" alt="gs"></p><h2 id="参数解释"><a href="#参数解释" class="headerlink" title="参数解释"></a>参数解释</h2><p><img src="../images/pso2.png" alt="gs"></p><h2 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h2><p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>]]></content>
+    
+    
+    <summary type="html">粒子群优化算法的背景、原理以及一些个人理解</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="粒子群算法" scheme="http://woody5962.github.io/tags/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>禁忌搜索算法</title>
     <link href="http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/"/>
     <id>http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/</id>
@@ -232,29 +280,6 @@
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
     <category term="搜索算法" scheme="http://woody5962.github.io/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>粒子群优化算法</title>
-    <link href="http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
-    <id>http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</id>
-    <published>2019-09-18T16:00:00.000Z</published>
-    <updated>2021-06-30T16:57:34.224Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p><p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p><h2 id="核心公式"><a href="#核心公式" class="headerlink" title="核心公式"></a>核心公式</h2><p><img src="../images/pso1.png" alt="gs"></p><h2 id="参数解释"><a href="#参数解释" class="headerlink" title="参数解释"></a>参数解释</h2><p><img src="../images/pso2.png" alt="gs"></p><h2 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h2><p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>]]></content>
-    
-    
-    <summary type="html">粒子群优化算法的背景、原理以及一些个人理解</summary>
-    
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="粒子群算法" scheme="http://woody5962.github.io/tags/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

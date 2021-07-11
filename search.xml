@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>元学习简介</title>
+    <url>/Meta-Learning/</url>
+    <content><![CDATA[<h2 id="简介">简介</h2>
+<p>说白了，就是学习一个meta- knowledge，使用这个knowledge去快速适应新的任务。</p>
+<p>即，学习怎么去学习。</p>
+<h2 id="与传统机器学习的区别">与传统机器学习的区别</h2>
+<p>这里学习的目标是一个meta-knowledge，feed的不是数据而是任务，分为train task和test task，而每一个task内部有训练数据和测试数据，分别叫做support set和query set。相对应的，在测试中输出的并不是对support set的计算结果，而是一个针对测试task的f，在测试task的query set上可以得到f（data）</p>
+<figure>
+<img src="../images/ml1.png" alt="ml" /><figcaption aria-hidden="true">ml</figcaption>
+</figure>
+<h2 id="与迁移学习的区别">与迁移学习的区别</h2>
+<ol type="1">
+<li>这里有专门的meta-net，对不同的task会专门使用meta-net初始化一套specific task net，在task net中更新参数，然后利用更新之后的参数进行损失计算并回传更新（可以1步，可以k步，步数越少越符合我们的使用目标，就是可以使meta-net生成的模型更快的适应task），此时再对meta-net中的参数进行同方向的更新，目的是使训练过程和使用目的一致，而使用目的正是能够对新的任务生成f，f能够快速适应该任务，在之后产生不错的效果，但并不是追求当下的效果。</li>
+</ol>
+<p>下图分别展示了maml和reptile的meta-learning框架：</p>
+<p><img src="../images/ml2.png" alt="ml" /> <img src="../images/ml3.png" alt="ml" /></p>
+<ol start="2" type="1">
+<li>迁移学习使用同一套参数，并不会针对专门的任务另外初始化一套网络，每一个任务的损失都直接影响model param，目的是得到当下的最优，也就是针对新任务可以直接有较优的结果。</li>
+</ol>
+<p><img src="../images/ml4.png" alt="ml" /> <img src="../images/ml5.png" alt="ml" /></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+        <category>元学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>元学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>模拟退火算法</title>
+    <url>/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="背景">背景</h2>
+<p>这个方法来自金属热加工过程的启发。在金属热加工过程中，当金属的温度超过它的熔点（Melting Point）时，原子就会激烈地随机运动。与所有的其它的物理系统相类似，原子的这种运动趋向于寻找其能量的极小状态。在这个能量的变迁过程中，开始时，温度非常高， 使得原子具有很高的能量。随着温度不断降低，金属逐渐冷却，金属中的原子的能量就越来越小，最后达到所有可能的最低点。</p>
+<h2 id="应用">应用</h2>
+<p>利用模拟退火的时候，让算法从较大的跳跃开始，使到它有足够的“能量”逃离可能“路过”的局部最优解而不至于限制在其中，当它停在全局最优解附近的时候，逐渐的减小跳跃量，以便使其“落脚 ”到全局最优解上。</p>
+<h2 id="具体操作">具体操作</h2>
+<p>从一个问题的原始解开始，用一个变量代表温度，这一温度开始时非常高，而后逐步减低。在每一次迭代期间，算法会随机选中题解中的某个数字，使其发生细微变化，而后计算该解的代价。关键的地方在于计算出该解的代价后，如何决定是否接受该解。 如果新的成本更低，则新的题解就会变成当前题解，这与爬山法类似；如果新的成本更高，则新的题解与概率 P 被接受（一开始的时候，T很高，导致P很大，于是就有了足够的能量逃离局部最优）。这一概率会随着温度T的降低而降低。即算法开始时，可以接受表现较差的解，随着退火过程中温度的不断下降，算法越来越不可以接受较差的解，知道最后，它只会接受更优的解。 其中P = exp[-（newcost - oldcost）/ T ] 其中newcost是新解的成本，oldcost是当前成本，T为当前温度。算法以概率P接受新的解。可见，当温度很高或者新旧解差别很大时，概率P都会很大。</p>
+]]></content>
+      <categories>
+        <category>启发式算法</category>
+      </categories>
+      <tags>
+        <tag>启发式算法</tag>
+        <tag>模拟退火算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>启发式算法概述</title>
     <url>/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h2 id="定义">定义</h2>
@@ -35,6 +84,166 @@
       </tags>
   </entry>
   <entry>
+    <title>数据预处理</title>
+    <url>/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="数据类型">数据类型</h2>
+<h3 id="表格数据">表格数据</h3>
+<p>行为对象（元组、数据点、实例、样本均为相同概念），列为属性</p>
+<h3 id="属性">属性</h3>
+<p>维、特征、变量、属性均为相同概念</p>
+<h3 id="数据类型-1">数据类型</h3>
+<ul>
+<li>名义型</li>
+<li>布尔型</li>
+<li>等级型</li>
+<li>数值型</li>
+</ul>
+<h3 id="数据的基本统计信息">数据的基本统计信息</h3>
+<p>统计中心趋势和离散程度：</p>
+<ul>
+<li>均值：算数均值、加权均值</li>
+<li>中位数（median）</li>
+<li>众数（mode）</li>
+<li>对于适度倾斜的单峰曲线，有经验公式：mean - mode = 3 * (mean - median)</li>
+</ul>
+<p><img src="../images/cl1.png" /></p>
+<ul>
+<li>分位数（Quantile）：x为数据集中的数，如果数据集中百分之K的数都不大于x，则称x为数据集的K分位数</li>
+<li>上四分位数（Q3-75% quentile）</li>
+<li>下四分位数（Q1-25%quentile）</li>
+<li>中间分位数（IQR ）: IQR = Q3 - Q1, 也叫四分位距，用来衡量数据的分散情况。</li>
+<li>方差（Variance）和标准差（Standard deviation）</li>
+</ul>
+<p><img src="../images/cl2.png" /></p>
+<ul>
+<li>盒图（箱线图）</li>
+</ul>
+<p><img src="../images/cl3.png" /></p>
+<h2 id="距离度量">距离度量</h2>
+<p>相似性，值域通常为[0,1]</p>
+<h3 id="名义型数据类型-布尔型数据类型">名义型数据类型 &amp; 布尔型数据类型</h3>
+<ul>
+<li>简单匹配（相同属性个数m，属性数量p，则距离为p-m/p）</li>
+<li>转换为多个布尔属性，如下图所示</li>
+</ul>
+<p><img src="../images/cl4.png" /></p>
+<p>q是两者都有的一个属性，r是i有但是j没有的属性。</p>
+<h3 id="数值型数据类型">数值型数据类型</h3>
+<p>明可夫斯基距离：</p>
+<p><img src="../images/cl5.png" /> <img src="../images/cl6.png" /></p>
+<p>前者是绝对距离，后者是方向差异。</p>
+<p>前者体现维度数值大小的差异，后者体现类似于用户兴趣之类的差异。</p>
+<h3 id="等级型数值类型">等级型数值类型</h3>
+<p><img src="../images/cl7.png" /></p>
+<h3 id="混合型数据类型">混合型数据类型</h3>
+<p>将上述的类型求得的距离进行加权求和。</p>
+<h2 id="数据预处理的方式">数据预处理的方式</h2>
+<ul>
+<li>数据清洗</li>
+<li>数据集成</li>
+<li>数据转换</li>
+<li>数据归约</li>
+</ul>
+<p><img src="../images/cl8.png" /></p>
+<h3 id="数据标准化">数据标准化</h3>
+<p>算法要求或者数据量纲不同：</p>
+<ol type="1">
+<li>Z-score标准化：接近（0，1）分布，适用于最值未知</li>
+<li>0-1标准化：线性变换到[0,1]区间</li>
+<li>小数定标标准化：</li>
+</ol>
+<p><img src="../images/cl9.png" /></p>
+<ol start="4" type="1">
+<li>logistic标准化</li>
+</ol>
+<p><img src="../images/cl10.png" /></p>
+<p>当数据集中的分布在零点附近时，通过sigmoid函数可以将其均匀地散开。</p>
+<h4 id="方法比较">方法比较</h4>
+<p><img src="../images/cl11.png" /></p>
+<h3 id="数据离散化">数据离散化</h3>
+<p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性）这样常常需要将连续属性变换成分类属性（离散化，Discretization）。另外，如果一个分类属性（或特征）具有大量不同值，或者某些之出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的。</p>
+<p>本质：将连续型数据分段</p>
+<h4 id="无监督离散化">无监督离散化</h4>
+<ul>
+<li>等距离散化</li>
+<li>等频离散化</li>
+<li>基于聚类分析的离散化（先聚类，再合并（自底向上）或分裂（自顶向下），达到预定的簇个数）</li>
+<li>基于正态3σ的离散化</li>
+</ul>
+<h4 id="有监督离散化">有监督离散化</h4>
+<ul>
+<li>基于信息增益的离散化（自顶向下）</li>
+<li>基于卡方的离散化（自底向上，根据不同区间的类分布相似度进行聚合，相似度越高，卡方值越小）</li>
+</ul>
+<h4 id="小结">小结</h4>
+<p><img src="../images/cl12.png" /></p>
+<h2 id="缺失值处理">缺失值处理</h2>
+<h3 id="缺失机制">缺失机制</h3>
+<ul>
+<li>完全随机缺失</li>
+<li>随机缺失（与完全变量有关）</li>
+<li>完全非随机缺失（与不完全变量自身有关）</li>
+</ul>
+<h3 id="处理方法">处理方法</h3>
+<h4 id="删除法">删除法</h4>
+<ul>
+<li>删除样本</li>
+<li>删除变量（缺得多，对研究目标影响不大）</li>
+<li>降低权重（不影响数据结构）</li>
+</ul>
+<h4 id="基于填补的方法">基于填补的方法</h4>
+<ul>
+<li>单一填补（均值、k-means、热平台、冷平台）</li>
+<li>随即填补（在均值填补的基础上加随机项）</li>
+</ul>
+<h4 id="基于模型的方法">基于模型的方法</h4>
+<ul>
+<li>建模预测</li>
+</ul>
+<h2 id="异常值检测">异常值检测</h2>
+<h3 id="基于统计的方法">基于统计的方法</h3>
+<p>上下α分位数之外的值</p>
+<h3 id="基于距离的算法">基于距离的算法</h3>
+<p>局部异常因子算法（LOF算法）</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>数据预处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬山法</title>
+    <url>/%E7%88%AC%E5%B1%B1%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="算法思想">算法思想</h2>
+<p>爬山法假设当前解和周围的解是有变化规律的，如，当前解得下方有一个代价较小的解，则我们就认为，沿着这个方向走，解会越来越小。</p>
+<p>该算法将搜索过程比作爬山过程，在没有任何有关山顶的其他信息的情况下，沿着高度增加的方向爬。如果相邻状态没有比当前值更高，则算法停止，认为当前值即为顶峰。</p>
+<h2 id="算法步骤">算法步骤</h2>
+<ol type="1">
+<li>设置初始状态n=s0为当前状态;</li>
+<li>如果当前状态已达标，算法结束，搜索成功;</li>
+<li>获取当前状态n的若干个临近状态m,计算这些h(m), nextn=min{h(m)}；</li>
+<li>IF h(n) &gt; h(nextn) THEN n:=nextn; ELSE 取当前状态为最佳状态并退出;</li>
+<li>GOTO 2步;</li>
+</ol>
+<p>实际操作中：</p>
+<ul>
+<li><p>循环改变解的每一个值产生一个临近解的列表</p></li>
+<li><p>对所有的临近解计算代价并排序，选择代价符合要求的的解</p></li>
+</ul>
+<p>对于单峰来说，必定能找到最优点。</p>
+]]></content>
+      <categories>
+        <category>启发式算法</category>
+      </categories>
+      <tags>
+        <tag>启发式算法</tag>
+        <tag>爬山法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>局部搜索算法</title>
     <url>/%E5%B1%80%E9%83%A8%E6%90%9C%E7%B4%A2/</url>
     <content><![CDATA[<h2 id="算法思想">算法思想</h2>
@@ -58,37 +267,6 @@
       <tags>
         <tag>启发式算法</tag>
         <tag>搜索算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>元学习简介</title>
-    <url>/Meta-Learning/</url>
-    <content><![CDATA[<h2 id="简介">简介</h2>
-<p>说白了，就是学习一个meta- knowledge，使用这个knowledge去快速适应新的任务。</p>
-<p>即，学习怎么去学习。</p>
-<h2 id="与传统机器学习的区别">与传统机器学习的区别</h2>
-<p>这里学习的目标是一个meta-knowledge，feed的不是数据而是任务，分为train task和test task，而每一个task内部有训练数据和测试数据，分别叫做support set和query set。相对应的，在测试中输出的并不是对support set的计算结果，而是一个针对测试task的f，在测试task的query set上可以得到f（data）</p>
-<figure>
-<img src="../images/ml1.png" alt="ml" /><figcaption aria-hidden="true">ml</figcaption>
-</figure>
-<h2 id="与迁移学习的区别">与迁移学习的区别</h2>
-<ol type="1">
-<li>这里有专门的meta-net，对不同的task会专门使用meta-net初始化一套specific task net，在task net中更新参数，然后利用更新之后的参数进行损失计算并回传更新（可以1步，可以k步，步数越少越符合我们的使用目标，就是可以使meta-net生成的模型更快的适应task），此时再对meta-net中的参数进行同方向的更新，目的是使训练过程和使用目的一致，而使用目的正是能够对新的任务生成f，f能够快速适应该任务，在之后产生不错的效果，但并不是追求当下的效果。</li>
-</ol>
-<p>下图分别展示了maml和reptile的meta-learning框架：</p>
-<p><img src="../images/ml2.png" alt="ml" /> <img src="../images/ml3.png" alt="ml" /></p>
-<ol start="2" type="1">
-<li>迁移学习使用同一套参数，并不会针对专门的任务另外初始化一套网络，每一个任务的损失都直接影响model param，目的是得到当下的最优，也就是针对新任务可以直接有较优的结果。</li>
-</ol>
-<p><img src="../images/ml4.png" alt="ml" /> <img src="../images/ml5.png" alt="ml" /></p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-        <category>元学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>元学习</tag>
       </tags>
   </entry>
   <entry>
@@ -211,24 +389,6 @@
       </tags>
   </entry>
   <entry>
-    <title>模拟退火算法</title>
-    <url>/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="背景">背景</h2>
-<p>这个方法来自金属热加工过程的启发。在金属热加工过程中，当金属的温度超过它的熔点（Melting Point）时，原子就会激烈地随机运动。与所有的其它的物理系统相类似，原子的这种运动趋向于寻找其能量的极小状态。在这个能量的变迁过程中，开始时，温度非常高， 使得原子具有很高的能量。随着温度不断降低，金属逐渐冷却，金属中的原子的能量就越来越小，最后达到所有可能的最低点。</p>
-<h2 id="应用">应用</h2>
-<p>利用模拟退火的时候，让算法从较大的跳跃开始，使到它有足够的“能量”逃离可能“路过”的局部最优解而不至于限制在其中，当它停在全局最优解附近的时候，逐渐的减小跳跃量，以便使其“落脚 ”到全局最优解上。</p>
-<h2 id="具体操作">具体操作</h2>
-<p>从一个问题的原始解开始，用一个变量代表温度，这一温度开始时非常高，而后逐步减低。在每一次迭代期间，算法会随机选中题解中的某个数字，使其发生细微变化，而后计算该解的代价。关键的地方在于计算出该解的代价后，如何决定是否接受该解。 如果新的成本更低，则新的题解就会变成当前题解，这与爬山法类似；如果新的成本更高，则新的题解与概率 P 被接受（一开始的时候，T很高，导致P很大，于是就有了足够的能量逃离局部最优）。这一概率会随着温度T的降低而降低。即算法开始时，可以接受表现较差的解，随着退火过程中温度的不断下降，算法越来越不可以接受较差的解，知道最后，它只会接受更优的解。 其中P = exp[-（newcost - oldcost）/ T ] 其中newcost是新解的成本，oldcost是当前成本，T为当前温度。算法以概率P接受新的解。可见，当温度很高或者新旧解差别很大时，概率P都会很大。</p>
-]]></content>
-      <categories>
-        <category>启发式算法</category>
-      </categories>
-      <tags>
-        <tag>启发式算法</tag>
-        <tag>模拟退火算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>禁忌搜索算法</title>
     <url>/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/</url>
     <content><![CDATA[<h2 id="算法思想">算法思想</h2>
@@ -256,208 +416,62 @@
       </tags>
   </entry>
   <entry>
-    <title>爬山法</title>
-    <url>/%E7%88%AC%E5%B1%B1%E6%B3%95/</url>
+    <title>随机搜索算法</title>
+    <url>/%E9%9A%8F%E6%9C%BA%E6%90%9C%E7%B4%A2/</url>
+    <content><![CDATA[<h2 id="关于该算法">关于该算法</h2>
+<p>随机搜索算法时最简单的优化搜索算法。</p>
+<p>类似于调参过程中的随机搜索，当不知道代价函数在值域范围内的变化规律时，可以使用随机算法对解进行搜索。</p>
+<h2 id="适用范围">适用范围</h2>
+<p>只适用于代价函数在值域范围内没有任何变化规律的情况，即找不到任何使得代价下降的梯度和极小值点。</p>
+<h2 id="求解">求解</h2>
+<p>只需要在值域范围内生成足够多的可行解，然后分别计算每个可行解的代价，根据代价选择一个最小的可行解作为随机搜索的最优解即可。</p>
+]]></content>
+      <categories>
+        <category>启发式算法</category>
+        <category>搜索算法</category>
+      </categories>
+      <tags>
+        <tag>启发式算法</tag>
+        <tag>搜索算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>蚁群算法</title>
+    <url>/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="算法思想">算法思想</h2>
-<p>爬山法假设当前解和周围的解是有变化规律的，如，当前解得下方有一个代价较小的解，则我们就认为，沿着这个方向走，解会越来越小。</p>
-<p>该算法将搜索过程比作爬山过程，在没有任何有关山顶的其他信息的情况下，沿着高度增加的方向爬。如果相邻状态没有比当前值更高，则算法停止，认为当前值即为顶峰。</p>
-<h2 id="算法步骤">算法步骤</h2>
-<ol type="1">
-<li>设置初始状态n=s0为当前状态;</li>
-<li>如果当前状态已达标，算法结束，搜索成功;</li>
-<li>获取当前状态n的若干个临近状态m,计算这些h(m), nextn=min{h(m)}；</li>
-<li>IF h(n) &gt; h(nextn) THEN n:=nextn; ELSE 取当前状态为最佳状态并退出;</li>
-<li>GOTO 2步;</li>
-</ol>
-<p>实际操作中：</p>
+<p>将蚁群算法应用于解决优化问题的基本思路为：用蚂蚁的行走路径表示待优化问题的可行解，整个蚂蚁群体的所有路径构成待优化问题的解空间。路径较短的蚂蚁释放的信息素量较多，随着时间的推进，较短的路径上累积的信息素浓度逐渐增高，选择该路径的蚂蚁个数也愈来愈多。最终，整个蚂蚁会在正反馈的作用下集中到最佳的路径上，此时对应的便是待优化问题的最优解。</p>
+<h2 id="算法流程蚁群解决tsp">算法流程（蚁群解决TSP）</h2>
+<figure>
+<img src="../images/yiqun1.jpg" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
+</figure>
+<h3 id="选择下一座城市的规则">选择下一座城市的规则</h3>
+<figure>
+<img src="../images/yiqun2.png" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
+</figure>
 <ul>
-<li><p>循环改变解的每一个值产生一个临近解的列表</p></li>
-<li><p>对所有的临近解计算代价并排序，选择代价符合要求的的解</p></li>
+<li><p>由选择公式可见，分母是所有可选路径的信息素的和，而某路径信息素越浓，选中它的概率越大。</p></li>
+<li><p>同时，给出了beta参数作为启发信息的权重，在这里，启发信息正如其名，是一种启发，根据其初值可知，哪条路径最短，其被选中的概率就越高。在早期，就是这样的启发信息来促使算法少走弯路。</p></li>
 </ul>
-<p>对于单峰来说，必定能找到最优点。</p>
+<h3 id="信息素更新规则">信息素更新规则</h3>
+<figure>
+<img src="../images/yiqun3.png" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
+</figure>
+<figure>
+<img src="../images/yiqun4.png" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
+</figure>
+<ul>
+<li><p>当Lk 计算完毕之后，得到目前最优解，根据最优解的路径更新信息素。</p></li>
+<li><p>可见，信息素在更新之前，先削弱了旧信息素的影响，然后将最优路径的信息素添加进去，由于最优，所以L小，信息素大。</p></li>
+</ul>
+<h2 id="缺点">缺点</h2>
+<p>实际实验中发现，当蚂蚁在一条路径上觅食很久时，放置一个近的食物基本没有效果，这可以理解为当一只蚂蚁找到一条路径时，在经过很长时间后大多数蚂蚁都选择了这条路径，这时，突然有一只蚂蚁找到了较近的食物，但因为时间过得太久，两条路径上浓度相差太大（浓度越大，被选择的概率就越大），整个系统基本已经停滞了，陷入了局部最优。</p>
 ]]></content>
       <categories>
         <category>启发式算法</category>
       </categories>
       <tags>
         <tag>启发式算法</tag>
-        <tag>爬山法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>粒子群优化算法</title>
-    <url>/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="背景">背景</h2>
-<p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p>
-<p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p>
-<h2 id="核心公式">核心公式</h2>
-<figure>
-<img src="../images/pso1.png" alt="gs" /><figcaption aria-hidden="true">gs</figcaption>
-</figure>
-<h2 id="参数解释">参数解释</h2>
-<figure>
-<img src="../images/pso2.png" alt="gs" /><figcaption aria-hidden="true">gs</figcaption>
-</figure>
-<h2 id="个人理解">个人理解</h2>
-<p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>
-]]></content>
-      <categories>
-        <category>启发式算法</category>
-      </categories>
-      <tags>
-        <tag>启发式算法</tag>
-        <tag>粒子群算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据预处理</title>
-    <url>/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h2 id="数据类型">数据类型</h2>
-<h3 id="表格数据">表格数据</h3>
-<p>行为对象（元组、数据点、实例、样本均为相同概念），列为属性</p>
-<h3 id="属性">属性</h3>
-<p>维、特征、变量、属性均为相同概念</p>
-<h3 id="数据类型-1">数据类型</h3>
-<ul>
-<li>名义型</li>
-<li>布尔型</li>
-<li>等级型</li>
-<li>数值型</li>
-</ul>
-<h3 id="数据的基本统计信息">数据的基本统计信息</h3>
-<p>统计中心趋势和离散程度：</p>
-<ul>
-<li>均值：算数均值、加权均值</li>
-<li>中位数（median）</li>
-<li>众数（mode）</li>
-<li>对于适度倾斜的单峰曲线，有经验公式：mean - mode = 3 * (mean - median)</li>
-</ul>
-<figure>
-<img src="../images/cl1.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<ul>
-<li>分位数（Quantile）：x为数据集中的数，如果数据集中百分之K的数都不大于x，则称x为数据集的K分位数</li>
-<li>上四分位数（Q3-75% quentile）</li>
-<li>下四分位数（Q1-25%quentile）</li>
-<li>中间分位数（IQR ）: IQR = Q3 - Q1, 也叫四分位距，用来衡量数据的分散情况。</li>
-<li>方差（Variance）和标准差（Standard deviation）</li>
-</ul>
-<figure>
-<img src="../images/cl2.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<ul>
-<li>盒图（箱线图）</li>
-</ul>
-<figure>
-<img src="../images/cl3.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<h2 id="距离度量">距离度量</h2>
-<p>相似性，值域通常为[0,1]</p>
-<h3 id="名义型数据类型-布尔型数据类型">名义型数据类型 &amp; 布尔型数据类型</h3>
-<ul>
-<li>简单匹配（相同属性个数m，属性数量p，则距离为p-m/p）</li>
-<li>转换为多个布尔属性，如下图所示</li>
-</ul>
-<figure>
-<img src="../images/cl4.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<p>q是两者都有的一个属性，r是i有但是j没有的属性。</p>
-<h3 id="数值型数据类型">数值型数据类型</h3>
-<p>明可夫斯基距离：</p>
-<p><img src="../images/cl5.png" alt="cl" /> <img src="../images/cl6.png" alt="cl" /></p>
-<p>前者是绝对距离，后者是方向差异。</p>
-<p>前者体现维度数值大小的差异，后者体现类似于用户兴趣之类的差异。</p>
-<h3 id="等级型数值类型">等级型数值类型</h3>
-<figure>
-<img src="../images/cl7.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<h3 id="混合型数据类型">混合型数据类型</h3>
-<p>将上述的类型求得的距离进行加权求和。</p>
-<h2 id="数据预处理的方式">数据预处理的方式</h2>
-<ul>
-<li>数据清洗</li>
-<li>数据集成</li>
-<li>数据转换</li>
-<li>数据归约</li>
-</ul>
-<figure>
-<img src="../images/cl8.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<h3 id="数据标准化">数据标准化</h3>
-<p>算法要求或者数据量纲不同：</p>
-<ol type="1">
-<li>Z-score标准化：接近（0，1）分布，适用于最值未知</li>
-<li>0-1标准化：线性变换到[0,1]区间</li>
-<li>小数定标标准化：</li>
-</ol>
-<figure>
-<img src="../images/cl9.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<ol start="4" type="1">
-<li>logistic标准化</li>
-</ol>
-<figure>
-<img src="../images/cl10.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<p>当数据集中的分布在零点附近时，通过sigmoid函数可以将其均匀地散开。</p>
-<h4 id="方法比较">方法比较</h4>
-<figure>
-<img src="../images/cl11.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<h3 id="数据离散化">数据离散化</h3>
-<p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性）这样常常需要将连续属性变换成分类属性（离散化，Discretization）。另外，如果一个分类属性（或特征）具有大量不同值，或者某些之出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的。</p>
-<p>本质：将连续型数据分段</p>
-<h4 id="无监督离散化">无监督离散化</h4>
-<ul>
-<li>等距离散化</li>
-<li>等频离散化</li>
-<li>基于聚类分析的离散化（先聚类，再合并（自底向上）或分裂（自顶向下），达到预定的簇个数）</li>
-<li>基于正态3σ的离散化</li>
-</ul>
-<h4 id="有监督离散化">有监督离散化</h4>
-<ul>
-<li>基于信息增益的离散化（自顶向下）</li>
-<li>基于卡方的离散化（自底向上，根据不同区间的类分布相似度进行聚合，相似度越高，卡方值越小）</li>
-</ul>
-<h4 id="小结">小结</h4>
-<figure>
-<img src="../images/cl12.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
-<h2 id="缺失值处理">缺失值处理</h2>
-<h3 id="缺失机制">缺失机制</h3>
-<ul>
-<li>完全随机缺失</li>
-<li>随机缺失（与完全变量有关）</li>
-<li>完全非随机缺失（与不完全变量自身有关）</li>
-</ul>
-<h3 id="处理方法">处理方法</h3>
-<h4 id="删除法">删除法</h4>
-<ul>
-<li>删除样本</li>
-<li>删除变量（缺得多，对研究目标影响不大）</li>
-<li>降低权重（不影响数据结构）</li>
-</ul>
-<h4 id="基于填补的方法">基于填补的方法</h4>
-<ul>
-<li>单一填补（均值、k-means、热平台、冷平台）</li>
-<li>随即填补（在均值填补的基础上加随机项）</li>
-</ul>
-<h4 id="基于模型的方法">基于模型的方法</h4>
-<ul>
-<li>建模预测</li>
-</ul>
-<h2 id="异常值检测">异常值检测</h2>
-<h3 id="基于统计的方法">基于统计的方法</h3>
-<p>上下α分位数之外的值</p>
-<h3 id="基于距离的算法">基于距离的算法</h3>
-<p>局部异常因子算法（LOF算法）</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>数据预处理</tag>
+        <tag>蚁群算法</tag>
       </tags>
   </entry>
   <entry>
@@ -486,6 +500,31 @@
       <tags>
         <tag>启发式算法</tag>
         <tag>搜索算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>粒子群优化算法</title>
+    <url>/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="背景">背景</h2>
+<p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p>
+<p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p>
+<h2 id="核心公式">核心公式</h2>
+<figure>
+<img src="../images/pso1.png" alt="gs" /><figcaption aria-hidden="true">gs</figcaption>
+</figure>
+<h2 id="参数解释">参数解释</h2>
+<figure>
+<img src="../images/pso2.png" alt="gs" /><figcaption aria-hidden="true">gs</figcaption>
+</figure>
+<h2 id="个人理解">个人理解</h2>
+<p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>
+]]></content>
+      <categories>
+        <category>启发式算法</category>
+      </categories>
+      <tags>
+        <tag>启发式算法</tag>
+        <tag>粒子群算法</tag>
       </tags>
   </entry>
   <entry>
@@ -775,65 +814,6 @@ f_j(x)=&amp;-\frac{G_j}{H_j+\lambda}\\
       <tags>
         <tag>机器学习</tag>
         <tag>集成学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>随机搜索算法</title>
-    <url>/%E9%9A%8F%E6%9C%BA%E6%90%9C%E7%B4%A2/</url>
-    <content><![CDATA[<h2 id="关于该算法">关于该算法</h2>
-<p>随机搜索算法时最简单的优化搜索算法。</p>
-<p>类似于调参过程中的随机搜索，当不知道代价函数在值域范围内的变化规律时，可以使用随机算法对解进行搜索。</p>
-<h2 id="适用范围">适用范围</h2>
-<p>只适用于代价函数在值域范围内没有任何变化规律的情况，即找不到任何使得代价下降的梯度和极小值点。</p>
-<h2 id="求解">求解</h2>
-<p>只需要在值域范围内生成足够多的可行解，然后分别计算每个可行解的代价，根据代价选择一个最小的可行解作为随机搜索的最优解即可。</p>
-]]></content>
-      <categories>
-        <category>启发式算法</category>
-        <category>搜索算法</category>
-      </categories>
-      <tags>
-        <tag>启发式算法</tag>
-        <tag>搜索算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>蚁群算法</title>
-    <url>/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="算法思想">算法思想</h2>
-<p>将蚁群算法应用于解决优化问题的基本思路为：用蚂蚁的行走路径表示待优化问题的可行解，整个蚂蚁群体的所有路径构成待优化问题的解空间。路径较短的蚂蚁释放的信息素量较多，随着时间的推进，较短的路径上累积的信息素浓度逐渐增高，选择该路径的蚂蚁个数也愈来愈多。最终，整个蚂蚁会在正反馈的作用下集中到最佳的路径上，此时对应的便是待优化问题的最优解。</p>
-<h2 id="算法流程蚁群解决tsp">算法流程（蚁群解决TSP）</h2>
-<figure>
-<img src="../images/yiqun1.jpg" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
-</figure>
-<h3 id="选择下一座城市的规则">选择下一座城市的规则</h3>
-<figure>
-<img src="../images/yiqun2.png" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
-</figure>
-<ul>
-<li><p>由选择公式可见，分母是所有可选路径的信息素的和，而某路径信息素越浓，选中它的概率越大。</p></li>
-<li><p>同时，给出了beta参数作为启发信息的权重，在这里，启发信息正如其名，是一种启发，根据其初值可知，哪条路径最短，其被选中的概率就越高。在早期，就是这样的启发信息来促使算法少走弯路。</p></li>
-</ul>
-<h3 id="信息素更新规则">信息素更新规则</h3>
-<figure>
-<img src="../images/yiqun3.png" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
-</figure>
-<figure>
-<img src="../images/yiqun4.png" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
-</figure>
-<ul>
-<li><p>当Lk 计算完毕之后，得到目前最优解，根据最优解的路径更新信息素。</p></li>
-<li><p>可见，信息素在更新之前，先削弱了旧信息素的影响，然后将最优路径的信息素添加进去，由于最优，所以L小，信息素大。</p></li>
-</ul>
-<h2 id="缺点">缺点</h2>
-<p>实际实验中发现，当蚂蚁在一条路径上觅食很久时，放置一个近的食物基本没有效果，这可以理解为当一只蚂蚁找到一条路径时，在经过很长时间后大多数蚂蚁都选择了这条路径，这时，突然有一只蚂蚁找到了较近的食物，但因为时间过得太久，两条路径上浓度相差太大（浓度越大，被选择的概率就越大），整个系统基本已经停滞了，陷入了局部最优。</p>
-]]></content>
-      <categories>
-        <category>启发式算法</category>
-      </categories>
-      <tags>
-        <tag>启发式算法</tag>
-        <tag>蚁群算法</tag>
       </tags>
   </entry>
 </search>

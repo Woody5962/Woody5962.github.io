@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://woody5962.github.io/images/cl11.png">
 <meta property="og:image" content="http://woody5962.github.io/images/cl12.png">
 <meta property="article:published_time" content="2020-06-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-11T16:29:55.748Z">
+<meta property="article:modified_time" content="2021-07-11T16:33:41.757Z">
 <meta property="article:author" content="Woody">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="数据预处理">
@@ -243,7 +243,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-12 00:29:55" itemprop="dateModified" datetime="2021-07-12T00:29:55+08:00">2021-07-12</time>
+                <time title="Modified: 2021-07-12 00:33:41" itemprop="dateModified" datetime="2021-07-12T00:33:41+08:00">2021-07-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -287,9 +287,7 @@
 <li>众数（mode）</li>
 <li>对于适度倾斜的单峰曲线，有经验公式：mean - mode = 3 * (mean - median)</li>
 </ul>
-<figure>
-<img src="../images/cl1.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl1.png" /></p>
 <ul>
 <li>分位数（Quantile）：x为数据集中的数，如果数据集中百分之K的数都不大于x，则称x为数据集的K分位数</li>
 <li>上四分位数（Q3-75% quentile）</li>
@@ -297,15 +295,11 @@
 <li>中间分位数（IQR ）: IQR = Q3 - Q1, 也叫四分位距，用来衡量数据的分散情况。</li>
 <li>方差（Variance）和标准差（Standard deviation）</li>
 </ul>
-<figure>
-<img src="../images/cl2.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl2.png" /></p>
 <ul>
 <li>盒图（箱线图）</li>
 </ul>
-<figure>
-<img src="../images/cl3.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl3.png" /></p>
 <h2 id="距离度量">距离度量</h2>
 <p>相似性，值域通常为[0,1]</p>
 <h3 id="名义型数据类型-布尔型数据类型">名义型数据类型 &amp; 布尔型数据类型</h3>
@@ -313,19 +307,15 @@
 <li>简单匹配（相同属性个数m，属性数量p，则距离为p-m/p）</li>
 <li>转换为多个布尔属性，如下图所示</li>
 </ul>
-<figure>
-<img src="../images/cl4.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl4.png" /></p>
 <p>q是两者都有的一个属性，r是i有但是j没有的属性。</p>
 <h3 id="数值型数据类型">数值型数据类型</h3>
 <p>明可夫斯基距离：</p>
-<p><img src="../images/cl5.png" alt="cl" /> <img src="../images/cl6.png" alt="cl" /></p>
+<p><img src="../images/cl5.png" /> <img src="../images/cl6.png" /></p>
 <p>前者是绝对距离，后者是方向差异。</p>
 <p>前者体现维度数值大小的差异，后者体现类似于用户兴趣之类的差异。</p>
 <h3 id="等级型数值类型">等级型数值类型</h3>
-<figure>
-<img src="../images/cl7.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl7.png" /></p>
 <h3 id="混合型数据类型">混合型数据类型</h3>
 <p>将上述的类型求得的距离进行加权求和。</p>
 <h2 id="数据预处理的方式">数据预处理的方式</h2>
@@ -335,9 +325,7 @@
 <li>数据转换</li>
 <li>数据归约</li>
 </ul>
-<figure>
-<img src="../images/cl8.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl8.png" /></p>
 <h3 id="数据标准化">数据标准化</h3>
 <p>算法要求或者数据量纲不同：</p>
 <ol type="1">
@@ -345,20 +333,14 @@
 <li>0-1标准化：线性变换到[0,1]区间</li>
 <li>小数定标标准化：</li>
 </ol>
-<figure>
-<img src="../images/cl9.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl9.png" /></p>
 <ol start="4" type="1">
 <li>logistic标准化</li>
 </ol>
-<figure>
-<img src="../images/cl10.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl10.png" /></p>
 <p>当数据集中的分布在零点附近时，通过sigmoid函数可以将其均匀地散开。</p>
 <h4 id="方法比较">方法比较</h4>
-<figure>
-<img src="../images/cl11.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl11.png" /></p>
 <h3 id="数据离散化">数据离散化</h3>
 <p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性）这样常常需要将连续属性变换成分类属性（离散化，Discretization）。另外，如果一个分类属性（或特征）具有大量不同值，或者某些之出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的。</p>
 <p>本质：将连续型数据分段</p>
@@ -375,9 +357,7 @@
 <li>基于卡方的离散化（自底向上，根据不同区间的类分布相似度进行聚合，相似度越高，卡方值越小）</li>
 </ul>
 <h4 id="小结">小结</h4>
-<figure>
-<img src="../images/cl12.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
-</figure>
+<p><img src="../images/cl12.png" /></p>
 <h2 id="缺失值处理">缺失值处理</h2>
 <h3 id="缺失机制">缺失机制</h3>
 <ul>

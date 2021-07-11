@@ -22,32 +22,34 @@
     var CONFIG = {"hostname":"woody5962.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="总结一下机器学习领域几种经典的分类算法，包括SVM、KNN、决策树、逻辑回归等等。">
+  <meta name="description" content="机器学习中的数据预处理简介">
 <meta property="og:type" content="article">
-<meta property="og:title" content="经典分类算法">
-<meta property="og:url" content="http://woody5962.github.io/%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="数据预处理">
+<meta property="og:url" content="http://woody5962.github.io/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Woody Tells">
-<meta property="og:description" content="总结一下机器学习领域几种经典的分类算法，包括SVM、KNN、决策树、逻辑回归等等。">
+<meta property="og:description" content="机器学习中的数据预处理简介">
 <meta property="og:locale">
-<meta property="og:image" content="http://woody5962.github.io/images/fl1.png">
-<meta property="og:image" content="http://woody5962.github.io/images/fl2.png">
-<meta property="og:image" content="http://woody5962.github.io/images/fl3.png">
-<meta property="og:image" content="http://woody5962.github.io/images/fl4.png">
-<meta property="og:image" content="http://woody5962.github.io/images/fl5.png">
-<meta property="og:image" content="http://woody5962.github.io/images/fl6.png">
-<meta property="og:image" content="http://woody5962.github.io/images/fl7.png">
-<meta property="og:image" content="http://woody5962.github.io/images/fl10.png">
-<meta property="og:image" content="http://woody5962.github.io/images/fl8.png">
-<meta property="og:image" content="http://woody5962.github.io/images/fl9.png">
-<meta property="article:published_time" content="2020-10-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-02T15:47:09.113Z">
+<meta property="og:image" content="http://woody5962.github.io/images/cl1.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl2.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl3.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl4.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl5.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl6.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl7.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl8.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl9.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl10.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl11.png">
+<meta property="og:image" content="http://woody5962.github.io/images/cl12.png">
+<meta property="article:published_time" content="2020-06-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-11T16:29:55.748Z">
 <meta property="article:author" content="Woody">
 <meta property="article:tag" content="机器学习">
-<meta property="article:tag" content="分类算法">
+<meta property="article:tag" content="数据预处理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://woody5962.github.io/images/fl1.png">
+<meta name="twitter:image" content="http://woody5962.github.io/images/cl1.png">
 
-<link rel="canonical" href="http://woody5962.github.io/%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/">
+<link rel="canonical" href="http://woody5962.github.io/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/">
 
 
 <script id="page-configurations">
@@ -60,7 +62,7 @@
   };
 </script>
 
-  <title>经典分类算法 | Woody Tells</title>
+  <title>数据预处理 | Woody Tells</title>
   
 
 
@@ -211,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://woody5962.github.io/%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://woody5962.github.io/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/cat.jpg">
@@ -224,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          经典分类算法
+          数据预处理
         </h1>
 
         <div class="post-meta">
@@ -234,14 +236,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-10-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-10T00:00:00+08:00">2020-10-10</time>
+              <time title="Created: 2020-06-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-10T00:00:00+08:00">2020-06-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-02 23:47:09" itemprop="dateModified" datetime="2021-07-02T23:47:09+08:00">2021-07-02</time>
+                <time title="Modified: 2021-07-12 00:29:55" itemprop="dateModified" datetime="2021-07-12T00:29:55+08:00">2021-07-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,14 +253,10 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
                 </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">分类算法</span></a>
-                </span>
             </span>
 
           
-            <div class="post-description">总结一下机器学习领域几种经典的分类算法，包括SVM、KNN、决策树、逻辑回归等等。</div>
+            <div class="post-description">机器学习中的数据预处理简介</div>
 
         </div>
       </header>
@@ -269,112 +267,145 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="经典分类算法">经典分类算法</h2>
+        <h2 id="数据类型">数据类型</h2>
+<h3 id="表格数据">表格数据</h3>
+<p>行为对象（元组、数据点、实例、样本均为相同概念），列为属性</p>
+<h3 id="属性">属性</h3>
+<p>维、特征、变量、属性均为相同概念</p>
+<h3 id="数据类型-1">数据类型</h3>
+<ul>
+<li>名义型</li>
+<li>布尔型</li>
+<li>等级型</li>
+<li>数值型</li>
+</ul>
+<h3 id="数据的基本统计信息">数据的基本统计信息</h3>
+<p>统计中心趋势和离散程度：</p>
+<ul>
+<li>均值：算数均值、加权均值</li>
+<li>中位数（median）</li>
+<li>众数（mode）</li>
+<li>对于适度倾斜的单峰曲线，有经验公式：mean - mode = 3 * (mean - median)</li>
+</ul>
 <figure>
-<img src="../images/fl1.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
+<img src="../images/cl1.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
 </figure>
-<h3 id="贝叶斯方法体系">贝叶斯方法体系</h3>
+<ul>
+<li>分位数（Quantile）：x为数据集中的数，如果数据集中百分之K的数都不大于x，则称x为数据集的K分位数</li>
+<li>上四分位数（Q3-75% quentile）</li>
+<li>下四分位数（Q1-25%quentile）</li>
+<li>中间分位数（IQR ）: IQR = Q3 - Q1, 也叫四分位距，用来衡量数据的分散情况。</li>
+<li>方差（Variance）和标准差（Standard deviation）</li>
+</ul>
+<figure>
+<img src="../images/cl2.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
+</figure>
+<ul>
+<li>盒图（箱线图）</li>
+</ul>
+<figure>
+<img src="../images/cl3.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
+</figure>
+<h2 id="距离度量">距离度量</h2>
+<p>相似性，值域通常为[0,1]</p>
+<h3 id="名义型数据类型-布尔型数据类型">名义型数据类型 &amp; 布尔型数据类型</h3>
+<ul>
+<li>简单匹配（相同属性个数m，属性数量p，则距离为p-m/p）</li>
+<li>转换为多个布尔属性，如下图所示</li>
+</ul>
+<figure>
+<img src="../images/cl4.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
+</figure>
+<p>q是两者都有的一个属性，r是i有但是j没有的属性。</p>
+<h3 id="数值型数据类型">数值型数据类型</h3>
+<p>明可夫斯基距离：</p>
+<p><img src="../images/cl5.png" alt="cl" /> <img src="../images/cl6.png" alt="cl" /></p>
+<p>前者是绝对距离，后者是方向差异。</p>
+<p>前者体现维度数值大小的差异，后者体现类似于用户兴趣之类的差异。</p>
+<h3 id="等级型数值类型">等级型数值类型</h3>
+<figure>
+<img src="../images/cl7.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
+</figure>
+<h3 id="混合型数据类型">混合型数据类型</h3>
+<p>将上述的类型求得的距离进行加权求和。</p>
+<h2 id="数据预处理的方式">数据预处理的方式</h2>
+<ul>
+<li>数据清洗</li>
+<li>数据集成</li>
+<li>数据转换</li>
+<li>数据归约</li>
+</ul>
+<figure>
+<img src="../images/cl8.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
+</figure>
+<h3 id="数据标准化">数据标准化</h3>
+<p>算法要求或者数据量纲不同：</p>
 <ol type="1">
-<li>朴素贝叶斯</li>
+<li>Z-score标准化：接近（0，1）分布，适用于最值未知</li>
+<li>0-1标准化：线性变换到[0,1]区间</li>
+<li>小数定标标准化：</li>
 </ol>
-<ul>
-<li>假设所有特征是独立的，无相互作用，可直接通过先验概率去计算后验概率。</li>
-</ul>
-<ol start="2" type="1">
-<li>半朴素贝叶斯</li>
+<figure>
+<img src="../images/cl9.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
+</figure>
+<ol start="4" type="1">
+<li>logistic标准化</li>
 </ol>
+<figure>
+<img src="../images/cl10.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
+</figure>
+<p>当数据集中的分布在零点附近时，通过sigmoid函数可以将其均匀地散开。</p>
+<h4 id="方法比较">方法比较</h4>
+<figure>
+<img src="../images/cl11.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
+</figure>
+<h3 id="数据离散化">数据离散化</h3>
+<p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性）这样常常需要将连续属性变换成分类属性（离散化，Discretization）。另外，如果一个分类属性（或特征）具有大量不同值，或者某些之出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的。</p>
+<p>本质：将连续型数据分段</p>
+<h4 id="无监督离散化">无监督离散化</h4>
 <ul>
-<li>适当考虑一部分属性间的相互依赖信息。</li>
-<li>典型的是独依赖估计</li>
+<li>等距离散化</li>
+<li>等频离散化</li>
+<li>基于聚类分析的离散化（先聚类，再合并（自底向上）或分裂（自顶向下），达到预定的簇个数）</li>
+<li>基于正态3σ的离散化</li>
 </ul>
-<ol start="3" type="1">
-<li>贝叶斯网</li>
-</ol>
+<h4 id="有监督离散化">有监督离散化</h4>
 <ul>
-<li>也叫信念网（belief network）</li>
-<li>借助有向无环图来刻画属性之间的依赖关系，使用条件概率表来描述属性的联合概率分布。</li>
-<li>贝叶斯网络的大致原理是构造各维特征之间的依赖网络（通过某种基于信息论准则的学习过程构建），然后根据学习到的贝叶斯网络B（G，P）通过Gibbs采样来模拟类别概率。</li>
+<li>基于信息增益的离散化（自顶向下）</li>
+<li>基于卡方的离散化（自底向上，根据不同区间的类分布相似度进行聚合，相似度越高，卡方值越小）</li>
 </ul>
-<h2 id="knn">KNN</h2>
-<p>最简单的一种分类思路，利用样本点周围样本的类别来做分类，唯一需要调整的参数就是所用邻居样本点的数目k。</p>
+<h4 id="小结">小结</h4>
 <figure>
-<img src="../images/fl2.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
+<img src="../images/cl12.png" alt="cl" /><figcaption aria-hidden="true">cl</figcaption>
 </figure>
-<p>另外，根据不同的数据特点确定距离度量也至关重要。</p>
-<h3 id="常见的距离度量">常见的距离度量</h3>
+<h2 id="缺失值处理">缺失值处理</h2>
+<h3 id="缺失机制">缺失机制</h3>
 <ul>
-<li>Minkowski-distance</li>
-<li>Cosine similarity</li>
-<li>Jaccard similarity</li>
-<li>KL-divergence</li>
+<li>完全随机缺失</li>
+<li>随机缺失（与完全变量有关）</li>
+<li>完全非随机缺失（与不完全变量自身有关）</li>
 </ul>
-<h2 id="决策树">决策树</h2>
-<p>分类使用的决策树根据不同的启发函数进行分枝，启发函数使用的一般都是信息论中的度量，比如信息增益、GINI不纯度的等等。</p>
-<p>根据所用启发函数的区别，常用的三类决策树为：</p>
-<ol type="1">
-<li>ID3: 使用信息增益</li>
-<li>C4.5: 使用信息增益比，解决ID3对于多取值特征的倾向性。</li>
-<li>CART：使用GINI不纯度</li>
-</ol>
-<h3 id="剪枝">剪枝</h3>
-<h4 id="预剪枝">预剪枝</h4>
-<p>在建树过程中，根据一些预定义的限制条件进行剪枝，比如树的最大深度、叶子结点的最少样本数、分枝后的增益等等。</p>
-<p>要主要的是，预剪枝有欠拟合风险，虽然当前的划分会导测准确率降低但在之后的划分中准确率可能会有显著上升。</p>
-<h4 id="后剪枝">后剪枝</h4>
-<p>后剪枝是在建树完成之后，对完整的决策树进行剪枝，在实际使用中效果一般会优于预剪枝，当然也会更耗时。</p>
-<p>其根据剪枝之后精度损失和复杂度做一个权衡，根据权衡标准选择是否剪枝。</p>
-<p>后剪枝都会损失精度，但是为了提升模型的泛化性，我们也可以在接受一定损失的情况下去做剪枝。</p>
-<p>比如代价复杂度剪枝CCP，思想就是看去掉之后的节点之后，模型损失的精度和精简的复杂度之间的权衡，找一个在一定精度损失的情况下，可精简复杂度最高的。</p>
-<h2 id="朴素贝叶斯分类器">朴素贝叶斯分类器</h2>
-<figure>
-<img src="../images/fl3.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
-<p>核心是将要求的条件概率转换为右边容易求的三个概率，尤其是分子的式子（因为分母是固定的），将其最大化，即bayes分类模型。</p>
-<p>然后，做一个很朴素的假设，假设X的取值是条件独立的，即：</p>
-<figure>
-<img src="../images/fl4.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
-<p>这样的话，可以通过MLE（maximum liklihood estimate,极大似然估计）得到贝叶斯估计的分类结果，若为连续变量，则进行离散化，依旧使用上述方法：</p>
-<figure>
-<img src="../images/fl5.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
-<h2 id="svm">SVM</h2>
-<p>基本思想：最大化类别之间的margin</p>
-<p>算法推导思想：将最大化类别之间margin的目标函数使用拉格朗日方法进行转化，使用SMO算法对其对偶问题进行求解。</p>
-<p>当数据线性可分时，我们直接使用线性SVM即可，否则可以通过核方法对其进行映射，得到高维空间的线性可分数据。</p>
-<h2 id="逻辑回归">逻辑回归</h2>
-<p>直接对分类的概率进行建模，使用MLE进行模型参数的求解即可。</p>
-<p>最后直接就可以通过自变量x得到分类y=k的概率。</p>
-<figure>
-<img src="../images/fl6.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
-<p>z就是一个回归模型，但是回归的并不是概率，而是分类几率的对数，所谓几率就是二分类中两种分类概率的比值，如下所示：</p>
-<figure>
-<img src="../images/fl7.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
-<h2 id="分类模型的评估">分类模型的评估</h2>
-<p>在分类问题中，我们将数据进行如下划分：</p>
-<figure>
-<img src="../images/fl10.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
-<h3 id="precision">precision</h3>
-<p>准确率，即所有分为positive的样本中，真正positive的比例。</p>
-<h3 id="recall">recall</h3>
-<p>召回率，即所有真正的positive样本中，被正确分为positive的比例。</p>
-<h3 id="f1-score">f1 score</h3>
-<p>准确率和召回率的调和平均数，兼顾二者的表现。</p>
-<h3 id="混淆矩阵">混淆矩阵</h3>
-<figure>
-<img src="../images/fl8.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
-<h3 id="roc和auc">ROC和AUC</h3>
-<p>AUC：一个正例预测为正的概率值大于负例预测为正的概率。</p>
-<p>表现在图像上就是ROC曲线下的面积。</p>
-<figure>
-<img src="../images/fl9.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
-<p>图像上每一个点都对应一个阈值。随着阈值不断减小，TPR和FPR都不断增大，反之不断减小。</p>
-<p>AUC是一种较为稳健的评估方式，尤其是在数据失衡的情况下，f1会非常容易受到样本比例的影响，比如正样本占绝大多数时，可能一个愚蠢的模型会将所有的样本划分为正样本，也不会对f1造成多大的影响，但是AUC会敏感的察觉到这种愚蠢的模型。</p>
+<h3 id="处理方法">处理方法</h3>
+<h4 id="删除法">删除法</h4>
+<ul>
+<li>删除样本</li>
+<li>删除变量（缺得多，对研究目标影响不大）</li>
+<li>降低权重（不影响数据结构）</li>
+</ul>
+<h4 id="基于填补的方法">基于填补的方法</h4>
+<ul>
+<li>单一填补（均值、k-means、热平台、冷平台）</li>
+<li>随即填补（在均值填补的基础上加随机项）</li>
+</ul>
+<h4 id="基于模型的方法">基于模型的方法</h4>
+<ul>
+<li>建模预测</li>
+</ul>
+<h2 id="异常值检测">异常值检测</h2>
+<h3 id="基于统计的方法">基于统计的方法</h3>
+<p>上下α分位数之外的值</p>
+<h3 id="基于距离的算法">基于距离的算法</h3>
+<p>局部异常因子算法（LOF算法）</p>
 
     </div>
 
@@ -385,7 +416,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
-              <a href="/tags/%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/" rel="tag"># 分类算法</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/" rel="tag"># 数据预处理</a>
           </div>
 
         
@@ -394,12 +425,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" rel="prev" title="集成学习概述">
-      <i class="fa fa-chevron-left"></i> 集成学习概述
+    <a href="/%E9%9B%86%E6%9D%9F%E6%90%9C%E7%B4%A2/" rel="prev" title="集束搜索">
+      <i class="fa fa-chevron-left"></i> 集束搜索
     </a></div>
       <div class="post-nav-item">
-    <a href="/Meta-Learning/" rel="next" title="元学习简介">
-      元学习简介 <i class="fa fa-chevron-right"></i>
+    <a href="/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" rel="next" title="集成学习概述">
+      集成学习概述 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -459,7 +490,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%8F%E5%85%B8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">经典分类算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%96%B9%E6%B3%95%E4%BD%93%E7%B3%BB"><span class="nav-number">1.1.</span> <span class="nav-text">贝叶斯方法体系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#knn"><span class="nav-number">2.</span> <span class="nav-text">KNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%B7%9D%E7%A6%BB%E5%BA%A6%E9%87%8F"><span class="nav-number">2.1.</span> <span class="nav-text">常见的距离度量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91"><span class="nav-number">3.</span> <span class="nav-text">决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%AA%E6%9E%9D"><span class="nav-number">3.1.</span> <span class="nav-text">剪枝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%84%E5%89%AA%E6%9E%9D"><span class="nav-number">3.1.1.</span> <span class="nav-text">预剪枝</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%89%AA%E6%9E%9D"><span class="nav-number">3.1.2.</span> <span class="nav-text">后剪枝</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">朴素贝叶斯分类器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#svm"><span class="nav-number">5.</span> <span class="nav-text">SVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="nav-number">6.</span> <span class="nav-text">逻辑回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BC%B0"><span class="nav-number">7.</span> <span class="nav-text">分类模型的评估</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#precision"><span class="nav-number">7.1.</span> <span class="nav-text">precision</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#recall"><span class="nav-number">7.2.</span> <span class="nav-text">recall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#f1-score"><span class="nav-number">7.3.</span> <span class="nav-text">f1 score</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5"><span class="nav-number">7.4.</span> <span class="nav-text">混淆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#roc%E5%92%8Cauc"><span class="nav-number">7.5.</span> <span class="nav-text">ROC和AUC</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.</span> <span class="nav-text">表格数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-1"><span class="nav-number">1.3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF"><span class="nav-number">1.4.</span> <span class="nav-text">数据的基本统计信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9D%E7%A6%BB%E5%BA%A6%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">距离度量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E4%B9%89%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%B8%83%E5%B0%94%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">名义型数据类型 &amp; 布尔型数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">数值型数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E7%BA%A7%E5%9E%8B%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">等级型数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.4.</span> <span class="nav-text">混合型数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">数据预处理的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">数据标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83"><span class="nav-number">3.1.1.</span> <span class="nav-text">方法比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">数据离散化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">3.2.1.</span> <span class="nav-text">无监督离散化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E7%9B%91%E7%9D%A3%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">3.2.2.</span> <span class="nav-text">有监督离散化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">3.2.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">缺失值处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E6%9C%BA%E5%88%B6"><span class="nav-number">4.1.</span> <span class="nav-text">缺失机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%B3%95"><span class="nav-number">4.2.1.</span> <span class="nav-text">删除法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%A1%AB%E8%A1%A5%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.2.</span> <span class="nav-text">基于填补的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.3.</span> <span class="nav-text">基于模型的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B"><span class="nav-number">5.</span> <span class="nav-text">异常值检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%BB%9F%E8%AE%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">基于统计的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%B7%9D%E7%A6%BB%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">基于距离的算法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

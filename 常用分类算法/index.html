@@ -24,7 +24,7 @@
 
   <meta name="description" content="总结一下机器学习领域几种经典的分类算法，包括SVM、KNN、决策树、逻辑回归等等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="经典分类算法">
+<meta property="og:title" content="经典分类算法简介">
 <meta property="og:url" content="http://woody5962.github.io/%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Woody Tells">
 <meta property="og:description" content="总结一下机器学习领域几种经典的分类算法，包括SVM、KNN、决策树、逻辑回归等等。">
@@ -40,7 +40,7 @@
 <meta property="og:image" content="http://woody5962.github.io/images/fl8.png">
 <meta property="og:image" content="http://woody5962.github.io/images/fl9.png">
 <meta property="article:published_time" content="2020-10-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-02T15:47:09.113Z">
+<meta property="article:modified_time" content="2021-07-12T04:04:15.937Z">
 <meta property="article:author" content="Woody">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="分类算法">
@@ -60,7 +60,7 @@
   };
 </script>
 
-  <title>经典分类算法 | Woody Tells</title>
+  <title>经典分类算法简介 | Woody Tells</title>
   
 
 
@@ -224,7 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          经典分类算法
+          经典分类算法简介
         </h1>
 
         <div class="post-meta">
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-02 23:47:09" itemprop="dateModified" datetime="2021-07-02T23:47:09+08:00">2021-07-02</time>
+                <time title="Modified: 2021-07-12 12:04:15" itemprop="dateModified" datetime="2021-07-12T12:04:15+08:00">2021-07-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -270,9 +270,7 @@
 
       
         <h2 id="经典分类算法">经典分类算法</h2>
-<figure>
-<img src="../images/fl1.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl1.png" /></p>
 <h3 id="贝叶斯方法体系">贝叶斯方法体系</h3>
 <ol type="1">
 <li>朴素贝叶斯</li>
@@ -297,9 +295,7 @@
 </ul>
 <h2 id="knn">KNN</h2>
 <p>最简单的一种分类思路，利用样本点周围样本的类别来做分类，唯一需要调整的参数就是所用邻居样本点的数目k。</p>
-<figure>
-<img src="../images/fl2.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl2.png" /></p>
 <p>另外，根据不同的数据特点确定距离度量也至关重要。</p>
 <h3 id="常见的距离度量">常见的距离度量</h3>
 <ul>
@@ -326,18 +322,12 @@
 <p>后剪枝都会损失精度，但是为了提升模型的泛化性，我们也可以在接受一定损失的情况下去做剪枝。</p>
 <p>比如代价复杂度剪枝CCP，思想就是看去掉之后的节点之后，模型损失的精度和精简的复杂度之间的权衡，找一个在一定精度损失的情况下，可精简复杂度最高的。</p>
 <h2 id="朴素贝叶斯分类器">朴素贝叶斯分类器</h2>
-<figure>
-<img src="../images/fl3.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl3.png" /></p>
 <p>核心是将要求的条件概率转换为右边容易求的三个概率，尤其是分子的式子（因为分母是固定的），将其最大化，即bayes分类模型。</p>
 <p>然后，做一个很朴素的假设，假设X的取值是条件独立的，即：</p>
-<figure>
-<img src="../images/fl4.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl4.png" /></p>
 <p>这样的话，可以通过MLE（maximum liklihood estimate,极大似然估计）得到贝叶斯估计的分类结果，若为连续变量，则进行离散化，依旧使用上述方法：</p>
-<figure>
-<img src="../images/fl5.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl5.png" /></p>
 <h2 id="svm">SVM</h2>
 <p>基本思想：最大化类别之间的margin</p>
 <p>算法推导思想：将最大化类别之间margin的目标函数使用拉格朗日方法进行转化，使用SMO算法对其对偶问题进行求解。</p>
@@ -345,18 +335,12 @@
 <h2 id="逻辑回归">逻辑回归</h2>
 <p>直接对分类的概率进行建模，使用MLE进行模型参数的求解即可。</p>
 <p>最后直接就可以通过自变量x得到分类y=k的概率。</p>
-<figure>
-<img src="../images/fl6.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl6.png" /></p>
 <p>z就是一个回归模型，但是回归的并不是概率，而是分类几率的对数，所谓几率就是二分类中两种分类概率的比值，如下所示：</p>
-<figure>
-<img src="../images/fl7.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl7.png" /></p>
 <h2 id="分类模型的评估">分类模型的评估</h2>
 <p>在分类问题中，我们将数据进行如下划分：</p>
-<figure>
-<img src="../images/fl10.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl10.png" /></p>
 <h3 id="precision">precision</h3>
 <p>准确率，即所有分为positive的样本中，真正positive的比例。</p>
 <h3 id="recall">recall</h3>
@@ -364,15 +348,11 @@
 <h3 id="f1-score">f1 score</h3>
 <p>准确率和召回率的调和平均数，兼顾二者的表现。</p>
 <h3 id="混淆矩阵">混淆矩阵</h3>
-<figure>
-<img src="../images/fl8.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl8.png" /></p>
 <h3 id="roc和auc">ROC和AUC</h3>
 <p>AUC：一个正例预测为正的概率值大于负例预测为正的概率。</p>
 <p>表现在图像上就是ROC曲线下的面积。</p>
-<figure>
-<img src="../images/fl9.png" alt="fl" /><figcaption aria-hidden="true">fl</figcaption>
-</figure>
+<p><img src="../images/fl9.png" /></p>
 <p>图像上每一个点都对应一个阈值。随着阈值不断减小，TPR和FPR都不断增大，反之不断减小。</p>
 <p>AUC是一种较为稳健的评估方式，尤其是在数据失衡的情况下，f1会非常容易受到样本比例的影响，比如正样本占绝大多数时，可能一个愚蠢的模型会将所有的样本划分为正样本，也不会对f1造成多大的影响，但是AUC会敏感的察觉到这种愚蠢的模型。</p>
 

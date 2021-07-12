@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://woody5962.github.io/images/yiqun3.png">
 <meta property="og:image" content="http://woody5962.github.io/images/yiqun4.png">
 <meta property="article:published_time" content="2019-09-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-30T16:57:18.257Z">
+<meta property="article:modified_time" content="2021-07-12T04:05:59.774Z">
 <meta property="article:author" content="Woody">
 <meta property="article:tag" content="启发式算法">
 <meta property="article:tag" content="蚁群算法">
@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-01 00:57:18" itemprop="dateModified" datetime="2021-07-01T00:57:18+08:00">2021-07-01</time>
+                <time title="Modified: 2021-07-12 12:05:59" itemprop="dateModified" datetime="2021-07-12T12:05:59+08:00">2021-07-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,24 +262,16 @@
         <h2 id="算法思想">算法思想</h2>
 <p>将蚁群算法应用于解决优化问题的基本思路为：用蚂蚁的行走路径表示待优化问题的可行解，整个蚂蚁群体的所有路径构成待优化问题的解空间。路径较短的蚂蚁释放的信息素量较多，随着时间的推进，较短的路径上累积的信息素浓度逐渐增高，选择该路径的蚂蚁个数也愈来愈多。最终，整个蚂蚁会在正反馈的作用下集中到最佳的路径上，此时对应的便是待优化问题的最优解。</p>
 <h2 id="算法流程蚁群解决tsp">算法流程（蚁群解决TSP）</h2>
-<figure>
-<img src="../images/yiqun1.jpg" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
-</figure>
+<p><img src="../images/yiqun1.jpg" /></p>
 <h3 id="选择下一座城市的规则">选择下一座城市的规则</h3>
-<figure>
-<img src="../images/yiqun2.png" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
-</figure>
+<p><img src="../images/yiqun2.png" /></p>
 <ul>
 <li><p>由选择公式可见，分母是所有可选路径的信息素的和，而某路径信息素越浓，选中它的概率越大。</p></li>
 <li><p>同时，给出了beta参数作为启发信息的权重，在这里，启发信息正如其名，是一种启发，根据其初值可知，哪条路径最短，其被选中的概率就越高。在早期，就是这样的启发信息来促使算法少走弯路。</p></li>
 </ul>
 <h3 id="信息素更新规则">信息素更新规则</h3>
-<figure>
-<img src="../images/yiqun3.png" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
-</figure>
-<figure>
-<img src="../images/yiqun4.png" alt="yiqun" /><figcaption aria-hidden="true">yiqun</figcaption>
-</figure>
+<p><img src="../images/yiqun3.png" /></p>
+<p><img src="../images/yiqun4.png" /></p>
 <ul>
 <li><p>当Lk 计算完毕之后，得到目前最优解，根据最优解的路径更新信息素。</p></li>
 <li><p>可见，信息素在更新之前，先削弱了旧信息素的影响，然后将最优路径的信息素添加进去，由于最优，所以L小，信息素大。</p></li>

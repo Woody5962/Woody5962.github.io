@@ -35,7 +35,7 @@
 <meta property="og:image" content="http://woody5962.github.io/images/ml4.png">
 <meta property="og:image" content="http://woody5962.github.io/images/ml5.png">
 <meta property="article:published_time" content="2021-03-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-01T14:52:18.627Z">
+<meta property="article:modified_time" content="2021-07-12T04:06:15.857Z">
 <meta property="article:author" content="Woody">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="元学习">
@@ -236,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-01 22:52:18" itemprop="dateModified" datetime="2021-07-01T22:52:18+08:00">2021-07-01</time>
+                <time title="Modified: 2021-07-12 12:06:15" itemprop="dateModified" datetime="2021-07-12T12:06:15+08:00">2021-07-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,19 +269,17 @@
 <p>即，学习怎么去学习。</p>
 <h2 id="与传统机器学习的区别">与传统机器学习的区别</h2>
 <p>这里学习的目标是一个meta-knowledge，feed的不是数据而是任务，分为train task和test task，而每一个task内部有训练数据和测试数据，分别叫做support set和query set。相对应的，在测试中输出的并不是对support set的计算结果，而是一个针对测试task的f，在测试task的query set上可以得到f（data）</p>
-<figure>
-<img src="../images/ml1.png" alt="ml" /><figcaption aria-hidden="true">ml</figcaption>
-</figure>
+<p><img src="../images/ml1.png" /></p>
 <h2 id="与迁移学习的区别">与迁移学习的区别</h2>
 <ol type="1">
 <li>这里有专门的meta-net，对不同的task会专门使用meta-net初始化一套specific task net，在task net中更新参数，然后利用更新之后的参数进行损失计算并回传更新（可以1步，可以k步，步数越少越符合我们的使用目标，就是可以使meta-net生成的模型更快的适应task），此时再对meta-net中的参数进行同方向的更新，目的是使训练过程和使用目的一致，而使用目的正是能够对新的任务生成f，f能够快速适应该任务，在之后产生不错的效果，但并不是追求当下的效果。</li>
 </ol>
 <p>下图分别展示了maml和reptile的meta-learning框架：</p>
-<p><img src="../images/ml2.png" alt="ml" /> <img src="../images/ml3.png" alt="ml" /></p>
+<p><img src="../images/ml2.png" /> <img src="../images/ml3.png" /></p>
 <ol start="2" type="1">
 <li>迁移学习使用同一套参数，并不会针对专门的任务另外初始化一套网络，每一个任务的损失都直接影响model param，目的是得到当下的最优，也就是针对新任务可以直接有较优的结果。</li>
 </ol>
-<p><img src="../images/ml4.png" alt="ml" /> <img src="../images/ml5.png" alt="ml" /></p>
+<p><img src="../images/ml4.png" /> <img src="../images/ml5.png" /></p>
 
     </div>
 
@@ -301,8 +299,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/" rel="prev" title="经典分类算法">
-      <i class="fa fa-chevron-left"></i> 经典分类算法
+    <a href="/%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/" rel="prev" title="经典分类算法简介">
+      <i class="fa fa-chevron-left"></i> 经典分类算法简介
     </a></div>
       <div class="post-nav-item"></div>
     </div>

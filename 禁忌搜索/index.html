@@ -31,7 +31,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="http://woody5962.github.io/images/jinji1.png">
 <meta property="article:published_time" content="2019-09-18T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-01T10:50:18.542Z">
+<meta property="article:modified_time" content="2021-07-12T04:04:50.386Z">
 <meta property="article:author" content="Woody">
 <meta property="article:tag" content="启发式算法">
 <meta property="article:tag" content="搜索算法">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-01 18:50:18" itemprop="dateModified" datetime="2021-07-01T18:50:18+08:00">2021-07-01</time>
+                <time title="Modified: 2021-07-12 12:04:50" itemprop="dateModified" datetime="2021-07-12T12:04:50+08:00">2021-07-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,7 +261,7 @@
 
       
         <h2 id="算法思想">算法思想</h2>
-<p><img src="../images/jinji1.png" alt="jinji" /> 通过保持一个禁忌表，以禁忌长度进行禁忌，遵守禁忌准则和藐视准则进行全局搜索。</p>
+<p><img src="../images/jinji1.png" /> 通过保持一个禁忌表，以禁忌长度进行禁忌，遵守禁忌准则和藐视准则进行全局搜索。</p>
 <h2 id="示例">示例</h2>
 <p>首先，我们对置换问题定义一种邻域搜索结构，如互换操作（SWAP），即随机交换两个点的位置，则每个状态的邻域解有Cn2=n（n一1）/2个。称从一个状态转移到其邻域中的另一个状态为一次移动（move），显然每次移动将导致适配值（反比于目标函数值）的变化。其次，我们采用一个存储结构来区分移动的属性，即是否为禁忌“对象”在以下示例中：考虑7元素的置换问题，并用每一状态的相应21个邻域解中最优的5次移动（对应最佳的5个适配值）作为候选解；为一定程度上防止迂回搜索，每个被采纳的移动在禁忌表中将滞留3步（即禁忌长度），即将移动在以下连续3步搜索中将被视为禁忌对象；需要指出的是，由于当前的禁忌对象对应状态的适配值可能很好，因此在算法中设置判断，若禁忌对象对应的适配值优于“ best so far”状态，则无视其禁忌属性而仍采纳其为当前选择，也就是通常所说的藐视准则（或称特赦准则）。 注意，出于改善算法的优化时间性能的考虑，若领域结构决定了大量的领域解（尤其对大规模问题，如TSP的SWAP操作将产生Cn2个领域解），则可以仅尝试部分互换的结果，而候选解也仅取其中的少量最佳状态。</p>
 <h2 id="算法步骤">算法步骤</h2>

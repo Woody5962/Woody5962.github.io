@@ -259,24 +259,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>将蚁群算法应用于解决优化问题的基本思路为：用蚂蚁的行走路径表示待优化问题的可行解，整个蚂蚁群体的所有路径构成待优化问题的解空间。路径较短的蚂蚁释放的信息素量较多，随着时间的推进，较短的路径上累积的信息素浓度逐渐增高，选择该路径的蚂蚁个数也愈来愈多。最终，整个蚂蚁会在正反馈的作用下集中到最佳的路径上，此时对应的便是待优化问题的最优解。</p>
-<h2 id="算法流程（蚁群解决TSP）"><a href="#算法流程（蚁群解决TSP）" class="headerlink" title="算法流程（蚁群解决TSP）"></a>算法流程（蚁群解决TSP）</h2><p><img src="../images/yiqun1.jpg"></p>
-<h3 id="选择下一座城市的规则"><a href="#选择下一座城市的规则" class="headerlink" title="选择下一座城市的规则"></a>选择下一座城市的规则</h3><p><img src="../images/yiqun2.png"></p>
+        <h2 id="算法思想">算法思想</h2>
+<p>将蚁群算法应用于解决优化问题的基本思路为：用蚂蚁的行走路径表示待优化问题的可行解，整个蚂蚁群体的所有路径构成待优化问题的解空间。路径较短的蚂蚁释放的信息素量较多，随着时间的推进，较短的路径上累积的信息素浓度逐渐增高，选择该路径的蚂蚁个数也愈来愈多。最终，整个蚂蚁会在正反馈的作用下集中到最佳的路径上，此时对应的便是待优化问题的最优解。</p>
+<h2 id="算法流程蚁群解决tsp">算法流程（蚁群解决TSP）</h2>
+<p><img src="../images/yiqun1.jpg" /></p>
+<h3 id="选择下一座城市的规则">选择下一座城市的规则</h3>
+<p><img src="../images/yiqun2.png" /></p>
 <ul>
-<li><p>由选择公式可见，分母是所有可选路径的信息素的和，而某路径信息素越浓，选中它的概率越大。</p>
-</li>
-<li><p>同时，给出了beta参数作为启发信息的权重，在这里，启发信息正如其名，是一种启发，根据其初值可知，哪条路径最短，其被选中的概率就越高。在早期，就是这样的启发信息来促使算法少走弯路。</p>
-</li>
+<li><p>由选择公式可见，分母是所有可选路径的信息素的和，而某路径信息素越浓，选中它的概率越大。</p></li>
+<li><p>同时，给出了beta参数作为启发信息的权重，在这里，启发信息正如其名，是一种启发，根据其初值可知，哪条路径最短，其被选中的概率就越高。在早期，就是这样的启发信息来促使算法少走弯路。</p></li>
 </ul>
-<h3 id="信息素更新规则"><a href="#信息素更新规则" class="headerlink" title="信息素更新规则"></a>信息素更新规则</h3><p><img src="../images/yiqun3.png"></p>
-<p><img src="../images/yiqun4.png"></p>
+<h3 id="信息素更新规则">信息素更新规则</h3>
+<p><img src="../images/yiqun3.png" /></p>
+<p><img src="../images/yiqun4.png" /></p>
 <ul>
-<li><p>当Lk 计算完毕之后，得到目前最优解，根据最优解的路径更新信息素。</p>
-</li>
-<li><p>可见，信息素在更新之前，先削弱了旧信息素的影响，然后将最优路径的信息素添加进去，由于最优，所以L小，信息素大。</p>
-</li>
+<li><p>当Lk 计算完毕之后，得到目前最优解，根据最优解的路径更新信息素。</p></li>
+<li><p>可见，信息素在更新之前，先削弱了旧信息素的影响，然后将最优路径的信息素添加进去，由于最优，所以L小，信息素大。</p></li>
 </ul>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>实际实验中发现，当蚂蚁在一条路径上觅食很久时，放置一个近的食物基本没有效果，这可以理解为当一只蚂蚁找到一条路径时，在经过很长时间后大多数蚂蚁都选择了这条路径，这时，突然有一只蚂蚁找到了较近的食物，但因为时间过得太久，两条路径上浓度相差太大（浓度越大，被选择的概率就越大），整个系统基本已经停滞了，陷入了局部最优。</p>
+<h2 id="缺点">缺点</h2>
+<p>实际实验中发现，当蚂蚁在一条路径上觅食很久时，放置一个近的食物基本没有效果，这可以理解为当一只蚂蚁找到一条路径时，在经过很长时间后大多数蚂蚁都选择了这条路径，这时，突然有一只蚂蚁找到了较近的食物，但因为时间过得太久，两条路径上浓度相差太大（浓度越大，被选择的概率就越大），整个系统基本已经停滞了，陷入了局部最优。</p>
 
     </div>
 
@@ -300,8 +301,8 @@
       <i class="fa fa-chevron-left"></i> 局部搜索算法
     </a></div>
       <div class="post-nav-item">
-    <a href="/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/" rel="next" title="模拟退火算法">
-      模拟退火算法 <i class="fa fa-chevron-right"></i>
+    <a href="/%E7%88%AC%E5%B1%B1%E6%B3%95/" rel="next" title="爬山法">
+      爬山法 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -361,7 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%EF%BC%88%E8%9A%81%E7%BE%A4%E8%A7%A3%E5%86%B3TSP%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">算法流程（蚁群解决TSP）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E4%B8%8B%E4%B8%80%E5%BA%A7%E5%9F%8E%E5%B8%82%E7%9A%84%E8%A7%84%E5%88%99"><span class="nav-number">2.1.</span> <span class="nav-text">选择下一座城市的规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E7%B4%A0%E6%9B%B4%E6%96%B0%E8%A7%84%E5%88%99"><span class="nav-number">2.2.</span> <span class="nav-text">信息素更新规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">缺点</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E8%9A%81%E7%BE%A4%E8%A7%A3%E5%86%B3tsp"><span class="nav-number">2.</span> <span class="nav-text">算法流程（蚁群解决TSP）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E4%B8%8B%E4%B8%80%E5%BA%A7%E5%9F%8E%E5%B8%82%E7%9A%84%E8%A7%84%E5%88%99"><span class="nav-number">2.1.</span> <span class="nav-text">选择下一座城市的规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E7%B4%A0%E6%9B%B4%E6%96%B0%E8%A7%84%E5%88%99"><span class="nav-number">2.2.</span> <span class="nav-text">信息素更新规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">缺点</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

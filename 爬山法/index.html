@@ -254,21 +254,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>爬山法假设当前解和周围的解是有变化规律的，如，当前解得下方有一个代价较小的解，则我们就认为，沿着这个方向走，解会越来越小。</p>
+        <h2 id="算法思想">算法思想</h2>
+<p>爬山法假设当前解和周围的解是有变化规律的，如，当前解得下方有一个代价较小的解，则我们就认为，沿着这个方向走，解会越来越小。</p>
 <p>该算法将搜索过程比作爬山过程，在没有任何有关山顶的其他信息的情况下，沿着高度增加的方向爬。如果相邻状态没有比当前值更高，则算法停止，认为当前值即为顶峰。</p>
-<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><ol>
+<h2 id="算法步骤">算法步骤</h2>
+<ol type="1">
 <li>设置初始状态n=s0为当前状态;</li>
 <li>如果当前状态已达标，算法结束，搜索成功;</li>
 <li>获取当前状态n的若干个临近状态m,计算这些h(m), nextn=min{h(m)}；</li>
-<li>IF h(n) &gt; h(nextn)<br> THEN  n:=nextn;<br> ELSE 取当前状态为最佳状态并退出;</li>
+<li>IF h(n) &gt; h(nextn) THEN n:=nextn; ELSE 取当前状态为最佳状态并退出;</li>
 <li>GOTO 2步;</li>
 </ol>
 <p>实际操作中：</p>
 <ul>
-<li><p>循环改变解的每一个值产生一个临近解的列表</p>
-</li>
-<li><p>对所有的临近解计算代价并排序，选择代价符合要求的的解</p>
-</li>
+<li><p>循环改变解的每一个值产生一个临近解的列表</p></li>
+<li><p>对所有的临近解计算代价并排序，选择代价符合要求的的解</p></li>
 </ul>
 <p>对于单峰来说，必定能找到最优点。</p>
 
@@ -290,12 +290,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/" rel="prev" title="模拟退火算法">
-      <i class="fa fa-chevron-left"></i> 模拟退火算法
+    <a href="/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95/" rel="prev" title="蚁群算法">
+      <i class="fa fa-chevron-left"></i> 蚁群算法
     </a></div>
       <div class="post-nav-item">
-    <a href="/%E9%9B%86%E6%9D%9F%E6%90%9C%E7%B4%A2/" rel="next" title="集束搜索">
-      集束搜索 <i class="fa fa-chevron-right"></i>
+    <a href="/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/" rel="next" title="模拟退火算法">
+      模拟退火算法 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

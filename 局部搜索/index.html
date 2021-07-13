@@ -258,19 +258,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>总是去找可能含有较优点的子集，最终找到的不一定是最优的点，但是具有较强的局部搜索能力。</p>
-<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><ol>
-<li>随机选择一个初始的可能解x0 ∈D，xb=x0,P=N(xb)。<br>D是问题的定义域， xb用于记录到目标位置的最优解，P为xb的邻域。</li>
+        <h2 id="算法思想">算法思想</h2>
+<p>总是去找可能含有较优点的子集，最终找到的不一定是最优的点，但是具有较强的局部搜索能力。</p>
+<h2 id="算法步骤">算法步骤</h2>
+<ol type="1">
+<li>随机选择一个初始的可能解x0 ∈D，xb=x0,P=N(xb)。 D是问题的定义域， xb用于记录到目标位置的最优解，P为xb的邻域。</li>
 <li>如果不满足结束条件，则：</li>
 </ol>
-<p>Begin；</p>
-<ul>
-<li>选择P的一个子集P’，xn为P’的最优解。P’可根据问题特点，选择适当大小的子集。可按概率选择；</li>
-<li>如果f(xn)&lt;f(xb)，则xb=xn，P=N(xb)，转2；</li>
-<li>否则P=P-P’，转2；</li>
-</ul>
+<p>Begin； * 选择P的一个子集P'，xn为P’的最优解。P’可根据问题特点，选择适当大小的子集。可按概率选择； * 如果f(xn)&lt;f(xb)，则xb=xn，P=N(xb)，转2； * 否则P=P-P'，转2；</p>
 <p>End（结束条件为循环次数或P为空等）；</p>
-<ol start="3">
+<ol start="3" type="1">
 <li>输出计算结果；</li>
 <li>结束</li>
 </ol>

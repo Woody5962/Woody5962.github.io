@@ -267,22 +267,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="表格数据"><a href="#表格数据" class="headerlink" title="表格数据"></a>表格数据</h3><p>行为对象（元组、数据点、实例、样本均为相同概念），列为属性</p>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>维、特征、变量、属性均为相同概念</p>
-<h3 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
+        <h2 id="数据类型">数据类型</h2>
+<h3 id="表格数据">表格数据</h3>
+<p>行为对象（元组、数据点、实例、样本均为相同概念），列为属性</p>
+<h3 id="属性">属性</h3>
+<p>维、特征、变量、属性均为相同概念</p>
+<h3 id="数据类型-1">数据类型</h3>
+<ul>
 <li>名义型</li>
 <li>布尔型</li>
 <li>等级型</li>
 <li>数值型</li>
 </ul>
-<h3 id="数据的基本统计信息"><a href="#数据的基本统计信息" class="headerlink" title="数据的基本统计信息"></a>数据的基本统计信息</h3><p>统计中心趋势和离散程度：</p>
+<h3 id="数据的基本统计信息">数据的基本统计信息</h3>
+<p>统计中心趋势和离散程度：</p>
 <ul>
 <li>均值：算数均值、加权均值</li>
 <li>中位数（median）</li>
 <li>众数（mode）</li>
 <li>对于适度倾斜的单峰曲线，有经验公式：mean - mode = 3 * (mean - median)</li>
 </ul>
-<p><img src="../images/cl1.png"></p>
+<p><img src="../images/cl1.png" /></p>
 <ul>
 <li>分位数（Quantile）：x为数据集中的数，如果数据集中百分之K的数都不大于x，则称x为数据集的K分位数</li>
 <li>上四分位数（Q3-75% quentile）</li>
@@ -290,76 +295,97 @@
 <li>中间分位数（IQR ）: IQR = Q3 - Q1, 也叫四分位距，用来衡量数据的分散情况。</li>
 <li>方差（Variance）和标准差（Standard deviation）</li>
 </ul>
-<p><img src="../images/cl2.png"></p>
+<p><img src="../images/cl2.png" /></p>
 <ul>
 <li>盒图（箱线图）</li>
 </ul>
-<p><img src="../images/cl3.png"></p>
-<h2 id="距离度量"><a href="#距离度量" class="headerlink" title="距离度量"></a>距离度量</h2><p>相似性，值域通常为[0,1]</p>
-<h3 id="名义型数据类型-amp-布尔型数据类型"><a href="#名义型数据类型-amp-布尔型数据类型" class="headerlink" title="名义型数据类型 &amp; 布尔型数据类型"></a>名义型数据类型 &amp; 布尔型数据类型</h3><ul>
+<p><img src="../images/cl3.png" /></p>
+<h2 id="距离度量">距离度量</h2>
+<p>相似性，值域通常为[0,1]</p>
+<h3 id="名义型数据类型-布尔型数据类型">名义型数据类型 &amp; 布尔型数据类型</h3>
+<ul>
 <li>简单匹配（相同属性个数m，属性数量p，则距离为p-m/p）</li>
 <li>转换为多个布尔属性，如下图所示</li>
 </ul>
-<p><img src="../images/cl4.png"></p>
+<p><img src="../images/cl4.png" /></p>
 <p>q是两者都有的一个属性，r是i有但是j没有的属性。</p>
-<h3 id="数值型数据类型"><a href="#数值型数据类型" class="headerlink" title="数值型数据类型"></a>数值型数据类型</h3><p>明可夫斯基距离：</p>
-<p><img src="../images/cl5.png"><br><img src="../images/cl6.png"></p>
+<h3 id="数值型数据类型">数值型数据类型</h3>
+<p>明可夫斯基距离：</p>
+<p><img src="../images/cl5.png" /> <img src="../images/cl6.png" /></p>
 <p>前者是绝对距离，后者是方向差异。</p>
 <p>前者体现维度数值大小的差异，后者体现类似于用户兴趣之类的差异。</p>
-<h3 id="等级型数值类型"><a href="#等级型数值类型" class="headerlink" title="等级型数值类型"></a>等级型数值类型</h3><p><img src="../images/cl7.png"></p>
-<h3 id="混合型数据类型"><a href="#混合型数据类型" class="headerlink" title="混合型数据类型"></a>混合型数据类型</h3><p>将上述的类型求得的距离进行加权求和。</p>
-<h2 id="数据预处理的方式"><a href="#数据预处理的方式" class="headerlink" title="数据预处理的方式"></a>数据预处理的方式</h2><ul>
+<h3 id="等级型数值类型">等级型数值类型</h3>
+<p><img src="../images/cl7.png" /></p>
+<h3 id="混合型数据类型">混合型数据类型</h3>
+<p>将上述的类型求得的距离进行加权求和。</p>
+<h2 id="数据预处理的方式">数据预处理的方式</h2>
+<ul>
 <li>数据清洗</li>
 <li>数据集成</li>
 <li>数据转换</li>
 <li>数据归约</li>
 </ul>
-<p><img src="../images/cl8.png"></p>
-<h3 id="数据标准化"><a href="#数据标准化" class="headerlink" title="数据标准化"></a>数据标准化</h3><p>算法要求或者数据量纲不同：</p>
-<ol>
+<p><img src="../images/cl8.png" /></p>
+<h3 id="数据标准化">数据标准化</h3>
+<p>算法要求或者数据量纲不同：</p>
+<ol type="1">
 <li>Z-score标准化：接近（0，1）分布，适用于最值未知</li>
 <li>0-1标准化：线性变换到[0,1]区间</li>
 <li>小数定标标准化：</li>
 </ol>
-<p><img src="../images/cl9.png"></p>
-<ol start="4">
+<p><img src="../images/cl9.png" /></p>
+<ol start="4" type="1">
 <li>logistic标准化</li>
 </ol>
-<p><img src="../images/cl10.png"></p>
+<p><img src="../images/cl10.png" /></p>
 <p>当数据集中的分布在零点附近时，通过sigmoid函数可以将其均匀地散开。</p>
-<h4 id="方法比较"><a href="#方法比较" class="headerlink" title="方法比较"></a>方法比较</h4><p><img src="../images/cl11.png"></p>
-<h3 id="数据离散化"><a href="#数据离散化" class="headerlink" title="数据离散化"></a>数据离散化</h3><p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性）这样常常需要将连续属性变换成分类属性（离散化，Discretization）。另外，如果一个分类属性（或特征）具有大量不同值，或者某些之出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的。</p>
+<h4 id="方法比较">方法比较</h4>
+<p><img src="../images/cl11.png" /></p>
+<h3 id="数据离散化">数据离散化</h3>
+<p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性）这样常常需要将连续属性变换成分类属性（离散化，Discretization）。另外，如果一个分类属性（或特征）具有大量不同值，或者某些之出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的。</p>
 <p>本质：将连续型数据分段</p>
-<h4 id="无监督离散化"><a href="#无监督离散化" class="headerlink" title="无监督离散化"></a>无监督离散化</h4><ul>
+<h4 id="无监督离散化">无监督离散化</h4>
+<ul>
 <li>等距离散化</li>
 <li>等频离散化</li>
 <li>基于聚类分析的离散化（先聚类，再合并（自底向上）或分裂（自顶向下），达到预定的簇个数）</li>
 <li>基于正态3σ的离散化</li>
 </ul>
-<h4 id="有监督离散化"><a href="#有监督离散化" class="headerlink" title="有监督离散化"></a>有监督离散化</h4><ul>
+<h4 id="有监督离散化">有监督离散化</h4>
+<ul>
 <li>基于信息增益的离散化（自顶向下）</li>
 <li>基于卡方的离散化（自底向上，根据不同区间的类分布相似度进行聚合，相似度越高，卡方值越小）</li>
 </ul>
-<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="../images/cl12.png"></p>
-<h2 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h2><h3 id="缺失机制"><a href="#缺失机制" class="headerlink" title="缺失机制"></a>缺失机制</h3><ul>
+<h4 id="小结">小结</h4>
+<p><img src="../images/cl12.png" /></p>
+<h2 id="缺失值处理">缺失值处理</h2>
+<h3 id="缺失机制">缺失机制</h3>
+<ul>
 <li>完全随机缺失</li>
 <li>随机缺失（与完全变量有关）</li>
 <li>完全非随机缺失（与不完全变量自身有关）</li>
 </ul>
-<h3 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h3><h4 id="删除法"><a href="#删除法" class="headerlink" title="删除法"></a>删除法</h4><ul>
+<h3 id="处理方法">处理方法</h3>
+<h4 id="删除法">删除法</h4>
+<ul>
 <li>删除样本</li>
 <li>删除变量（缺得多，对研究目标影响不大）</li>
 <li>降低权重（不影响数据结构）</li>
 </ul>
-<h4 id="基于填补的方法"><a href="#基于填补的方法" class="headerlink" title="基于填补的方法"></a>基于填补的方法</h4><ul>
+<h4 id="基于填补的方法">基于填补的方法</h4>
+<ul>
 <li>单一填补（均值、k-means、热平台、冷平台）</li>
 <li>随即填补（在均值填补的基础上加随机项）</li>
 </ul>
-<h4 id="基于模型的方法"><a href="#基于模型的方法" class="headerlink" title="基于模型的方法"></a>基于模型的方法</h4><ul>
+<h4 id="基于模型的方法">基于模型的方法</h4>
+<ul>
 <li>建模预测</li>
 </ul>
-<h2 id="异常值检测"><a href="#异常值检测" class="headerlink" title="异常值检测"></a>异常值检测</h2><h3 id="基于统计的方法"><a href="#基于统计的方法" class="headerlink" title="基于统计的方法"></a>基于统计的方法</h3><p>上下α分位数之外的值</p>
-<h3 id="基于距离的算法"><a href="#基于距离的算法" class="headerlink" title="基于距离的算法"></a>基于距离的算法</h3><p>局部异常因子算法（LOF算法）</p>
+<h2 id="异常值检测">异常值检测</h2>
+<h3 id="基于统计的方法">基于统计的方法</h3>
+<p>上下α分位数之外的值</p>
+<h3 id="基于距离的算法">基于距离的算法</h3>
+<p>局部异常因子算法（LOF算法）</p>
 
     </div>
 
@@ -444,7 +470,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.</span> <span class="nav-text">表格数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-1"><span class="nav-number">1.3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF"><span class="nav-number">1.4.</span> <span class="nav-text">数据的基本统计信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9D%E7%A6%BB%E5%BA%A6%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">距离度量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E4%B9%89%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-amp-%E5%B8%83%E5%B0%94%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">名义型数据类型 &amp; 布尔型数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">数值型数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E7%BA%A7%E5%9E%8B%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">等级型数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.4.</span> <span class="nav-text">混合型数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">数据预处理的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">数据标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83"><span class="nav-number">3.1.1.</span> <span class="nav-text">方法比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">数据离散化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">3.2.1.</span> <span class="nav-text">无监督离散化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E7%9B%91%E7%9D%A3%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">3.2.2.</span> <span class="nav-text">有监督离散化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">3.2.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">缺失值处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E6%9C%BA%E5%88%B6"><span class="nav-number">4.1.</span> <span class="nav-text">缺失机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%B3%95"><span class="nav-number">4.2.1.</span> <span class="nav-text">删除法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%A1%AB%E8%A1%A5%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.2.</span> <span class="nav-text">基于填补的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.3.</span> <span class="nav-text">基于模型的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B"><span class="nav-number">5.</span> <span class="nav-text">异常值检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%BB%9F%E8%AE%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">基于统计的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%B7%9D%E7%A6%BB%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">基于距离的算法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.</span> <span class="nav-text">表格数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-1"><span class="nav-number">1.3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF"><span class="nav-number">1.4.</span> <span class="nav-text">数据的基本统计信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9D%E7%A6%BB%E5%BA%A6%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">距离度量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E4%B9%89%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%B8%83%E5%B0%94%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">名义型数据类型 &amp; 布尔型数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">数值型数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E7%BA%A7%E5%9E%8B%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">等级型数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.4.</span> <span class="nav-text">混合型数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">数据预处理的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">数据标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83"><span class="nav-number">3.1.1.</span> <span class="nav-text">方法比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">数据离散化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">3.2.1.</span> <span class="nav-text">无监督离散化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E7%9B%91%E7%9D%A3%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">3.2.2.</span> <span class="nav-text">有监督离散化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">3.2.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">缺失值处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E6%9C%BA%E5%88%B6"><span class="nav-number">4.1.</span> <span class="nav-text">缺失机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%B3%95"><span class="nav-number">4.2.1.</span> <span class="nav-text">删除法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%A1%AB%E8%A1%A5%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.2.</span> <span class="nav-text">基于填补的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.3.</span> <span class="nav-text">基于模型的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B"><span class="nav-number">5.</span> <span class="nav-text">异常值检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%BB%9F%E8%AE%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">基于统计的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%B7%9D%E7%A6%BB%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">基于距离的算法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

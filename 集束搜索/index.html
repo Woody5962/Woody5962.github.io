@@ -260,14 +260,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="算法思想">算法思想</h2>
-<p>举例说明，在NLP领域中，经常会涉及机器翻译结果的搜索，比如在decoder中，我们可以使用贪心策略每次选择softmax值最高的，但是由于贪心解往往达不到最优，所以我们放松贪心约束，每次选择最优的k个，k便是集束宽度，这样对解的搜索叫做集束搜索。</p>
-<h2 id="过程示例">过程示例</h2>
-<p>假设字典为[a,b,c]，beam size选择2，则如下图有：</p>
-<p><img src="../images/jishu1.png" /></p>
-<ol type="1">
-<li><p>在生成第1个词的时候，选择概率最大的2个词，那么当前序列就是a或b</p></li>
-<li><p>生成第2个词的时候，我们将当前序列a或b，分别与字典中的所有词进行组合，得到新的6个序列aa ab ac ba bb bc,然后从其中选择2个概率最高的，作为当前序列，即ab或bb</p></li>
+        <h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>举例说明，在NLP领域中，经常会涉及机器翻译结果的搜索，比如在decoder中，我们可以使用贪心策略每次选择softmax值最高的，但是由于贪心解往往达不到最优，所以我们放松贪心约束，每次选择最优的k个，k便是集束宽度，这样对解的搜索叫做集束搜索。</p>
+<h2 id="过程示例"><a href="#过程示例" class="headerlink" title="过程示例"></a>过程示例</h2><p>假设字典为[a,b,c]，beam size选择2，则如下图有：</p>
+<p><img src="../images/jishu1.png"></p>
+<ol>
+<li><p>在生成第1个词的时候，选择概率最大的2个词，那么当前序列就是a或b</p>
+</li>
+<li><p>生成第2个词的时候，我们将当前序列a或b，分别与字典中的所有词进行组合，得到新的6个序列aa ab ac ba bb bc,然后从其中选择2个概率最高的，作为当前序列，即ab或bb</p>
+</li>
 </ol>
 <p>不断重复这个过程，直到遇到结束符为止。最终输出2个概率最高的序列。</p>
 <p>显然集束搜索属于贪心算法，不能保证一定能够找到全局最优解，因为考虑到搜索空间太大，而采用一个相对的较优解。</p>
@@ -292,8 +292,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/" rel="prev" title="模拟退火算法">
-      <i class="fa fa-chevron-left"></i> 模拟退火算法
+    <a href="/%E7%88%AC%E5%B1%B1%E6%B3%95/" rel="prev" title="爬山法">
+      <i class="fa fa-chevron-left"></i> 爬山法
     </a></div>
       <div class="post-nav-item">
     <a href="/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/" rel="next" title="数据预处理">

@@ -22,15 +22,23 @@
     var CONFIG = {"hostname":"woody5962.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Woody Tells">
-<meta property="og:url" content="http://woody5962.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
+  <meta name="description" content="离散化与稠密化的动机以及优劣分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散化与稠密化">
+<meta property="og:url" content="http://woody5962.github.io/%E7%A6%BB%E6%95%A3%E5%8C%96%E4%B8%8E%E7%A8%A0%E5%AF%86%E5%8C%96/index.html">
 <meta property="og:site_name" content="Woody Tells">
+<meta property="og:description" content="离散化与稠密化的动机以及优劣分析">
 <meta property="og:locale">
+<meta property="og:image" content="http://woody5962.github.io/images/cl12.png">
+<meta property="article:published_time" content="2021-07-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-15T16:09:18.359Z">
 <meta property="article:author" content="Woody">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="向量表征">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://woody5962.github.io/images/cl12.png">
 
-<link rel="canonical" href="http://woody5962.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+<link rel="canonical" href="http://woody5962.github.io/%E7%A6%BB%E6%95%A3%E5%8C%96%E4%B8%8E%E7%A8%A0%E5%AF%86%E5%8C%96/">
 
 
 <script id="page-configurations">
@@ -38,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Category: 机器学习 | Woody Tells</title>
+  <title>离散化与稠密化 | Woody Tells</title>
   
 
 
@@ -187,134 +195,134 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">机器学习
-          <small>Category</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://woody5962.github.io/%E7%A6%BB%E6%95%A3%E5%8C%96%E4%B8%8E%E7%A8%A0%E5%AF%86%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat.jpg">
+      <meta itemprop="name" content="Woody">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Woody Tells">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          离散化与稠密化
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-15 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-15T00:00:00+08:00">2021-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-16 00:09:18" itemprop="dateModified" datetime="2021-07-16T00:09:18+08:00">2021-07-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">离散化与稠密化的动机以及优劣分析</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-15T00:00:00+08:00"
-              content="2021-07-15">
-          07-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E7%A6%BB%E6%95%A3%E5%8C%96%E4%B8%8E%E7%A8%A0%E5%AF%86%E5%8C%96/" itemprop="url">
-            <span itemprop="name">离散化与稠密化</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-03-10T00:00:00+08:00"
-              content="2021-03-10">
-          03-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/Meta-Learning/" itemprop="url">
-            <span itemprop="name">元学习简介</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-10T00:00:00+08:00"
-              content="2020-10-10">
-          10-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/" itemprop="url">
-            <span itemprop="name">经典分类算法简介</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-09-10T00:00:00+08:00"
-              content="2020-09-10">
-          09-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">集成学习概述</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-10T00:00:00+08:00"
-              content="2020-06-10">
-          06-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/" itemprop="url">
-            <span itemprop="name">数据预处理</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <h2 id="简介">简介</h2>
+<p>离散化与稠密化是机器学习领域的两个重要概念，虽然不是互逆的概念，但是二者却有共通之处。</p>
+<p>离散化的本质是将连续型数据分段，而稠密化的本质是降低表征维度。</p>
+<p>前者是在单一维度特征内部进行”降维“，而后者是在不同特征之间进行实打实的降维。</p>
+<p>下面对这两个概念分别进行介绍。</p>
+<h2 id="离散化">离散化</h2>
+<p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性），这样常常需要将连续属性变换成分类属性。</p>
+<p>另外，如果一个分类属性（或特征）具有大量不同值，或者某些值出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的，具体优点分析如下：</p>
+<ul>
+<li>避免one-hot场景下频繁扩充维度，并且容易造成维度不匹配的问题</li>
+<li>离散化后的特征对异常数据有很强的鲁棒性，比如我们可以把异常数据归并到一类里面，给一个统一的值，避免对结果造成过大的干扰。</li>
+<li>离散化之后可以有效的进行特征交叉，提升模型表达能力</li>
+<li>减轻过拟合风险，提升模型稳定性。比如31岁和30岁并没有太大的区别，不能因为长了一岁就对结果有了明显的影响；并且对于逻辑回归这种模型来说，离散化会减少参数量，显式的简化了模型，减轻了过拟合。</li>
+</ul>
+<h3 id="无监督离散化">无监督离散化</h3>
+<ul>
+<li>等距离散化</li>
+<li>等频离散化</li>
+<li>基于聚类分析的离散化（先聚类，再合并（自底向上）或分裂（自顶向下），达到预定的簇个数）</li>
+<li>基于正态3σ的离散化</li>
+</ul>
+<h3 id="有监督离散化">有监督离散化</h3>
+<ul>
+<li>基于信息增益的离散化（自顶向下）</li>
+<li>基于卡方的离散化（自底向上，根据不同区间的类分布相似度进行聚合，相似度越高，卡方值越小）</li>
+</ul>
+<h3 id="小结">小结</h3>
+<p><img src="../images/cl12.png" /></p>
+<h2 id="稠密化">稠密化</h2>
+<p>稠密化在深度学习中有一个更常见的称呼——Embedding。一般来说，我们稠密化的对象是稀疏向量，最常见的是one-hot向量。</p>
+<p>举一个简单的例子，在NLP中，我们会遇到多种one-hot向量，比如单词的原始表征、tfidf表征等等，动辄就几十万维。对于这种表征，如果不进行稠密化，对空间复杂度和时间复杂度都是一个很大的考验。</p>
+<p>将其稠密化为embedding之后，起码有如下优势：</p>
+<ul>
+<li>可以在不丢失信息的情况下实现降维，降低空间复杂度和时间复杂度。（众所周知，3维就可以表征8个状态，但是one-hot需要8维）</li>
+<li>可以在嵌入空间赋予向量物理意义，使得向量之间可以有效的比较相似性，比如常见的在嵌入空间做余弦相似度。</li>
+<li>避免one-hot的扩充和维度不对应问题</li>
+</ul>
+<p>具体做embedding的方法，目前已经多不胜数。最为经典的还是word2vec系列，并且近几年深度学习推荐系统的发展更是推进了embedding方法的扩展，graph embedding已经在推荐系统领域得到了广泛应用，在graph中可以灵活的添加side-information，甚至直接结合knowledge-graph，使得embedding的语义信息越来越丰富。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/%E5%90%91%E9%87%8F%E8%A1%A8%E5%BE%81/" rel="tag"># 向量表征</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Meta-Learning/" rel="prev" title="元学习简介">
+      <i class="fa fa-chevron-left"></i> 元学习简介
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -367,6 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">离散化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">2.1.</span> <span class="nav-text">无监督离散化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E7%9B%91%E7%9D%A3%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="nav-number">2.2.</span> <span class="nav-text">有监督离散化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">2.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%A0%E5%AF%86%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">稠密化</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -6,7 +6,7 @@
   <link href="http://woody5962.github.io/atom.xml" rel="self"/>
   
   <link href="http://woody5962.github.io/"/>
-  <updated>2021-07-12T04:06:15.857Z</updated>
+  <updated>2021-07-15T16:09:18.359Z</updated>
   <id>http://woody5962.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>离散化与稠密化</title>
+    <link href="http://woody5962.github.io/%E7%A6%BB%E6%95%A3%E5%8C%96%E4%B8%8E%E7%A8%A0%E5%AF%86%E5%8C%96/"/>
+    <id>http://woody5962.github.io/%E7%A6%BB%E6%95%A3%E5%8C%96%E4%B8%8E%E7%A8%A0%E5%AF%86%E5%8C%96/</id>
+    <published>2021-07-14T16:00:00.000Z</published>
+    <updated>2021-07-15T16:09:18.359Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介">简介</h2><p>离散化与稠密化是机器学习领域的两个重要概念，虽然不是互逆的概念，但是二者却有共通之处。</p><p>离散化的本质是将连续型数据分段，而稠密化的本质是降低表征维度。</p><p>前者是在单一维度特征内部进行”降维“，而后者是在不同特征之间进行实打实的降维。</p><p>下面对这两个概念分别进行介绍。</p><h2 id="离散化">离散化</h2><p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性），这样常常需要将连续属性变换成分类属性。</p><p>另外，如果一个分类属性（或特征）具有大量不同值，或者某些值出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的，具体优点分析如下：</p><ul><li>避免one-hot场景下频繁扩充维度，并且容易造成维度不匹配的问题</li><li>离散化后的特征对异常数据有很强的鲁棒性，比如我们可以把异常数据归并到一类里面，给一个统一的值，避免对结果造成过大的干扰。</li><li>离散化之后可以有效的进行特征交叉，提升模型表达能力</li><li>减轻过拟合风险，提升模型稳定性。比如31岁和30岁并没有太大的区别，不能因为长了一岁就对结果有了明显的影响；并且对于逻辑回归这种模型来说，离散化会减少参数量，显式的简化了模型，减轻了过拟合。</li></ul><h3 id="无监督离散化">无监督离散化</h3><ul><li>等距离散化</li><li>等频离散化</li><li>基于聚类分析的离散化（先聚类，再合并（自底向上）或分裂（自顶向下），达到预定的簇个数）</li><li>基于正态3σ的离散化</li></ul><h3 id="有监督离散化">有监督离散化</h3><ul><li>基于信息增益的离散化（自顶向下）</li><li>基于卡方的离散化（自底向上，根据不同区间的类分布相似度进行聚合，相似度越高，卡方值越小）</li></ul><h3 id="小结">小结</h3><p><img src="../images/cl12.png" /></p><h2 id="稠密化">稠密化</h2><p>稠密化在深度学习中有一个更常见的称呼——Embedding。一般来说，我们稠密化的对象是稀疏向量，最常见的是one-hot向量。</p><p>举一个简单的例子，在NLP中，我们会遇到多种one-hot向量，比如单词的原始表征、tfidf表征等等，动辄就几十万维。对于这种表征，如果不进行稠密化，对空间复杂度和时间复杂度都是一个很大的考验。</p><p>将其稠密化为embedding之后，起码有如下优势：</p><ul><li>可以在不丢失信息的情况下实现降维，降低空间复杂度和时间复杂度。（众所周知，3维就可以表征8个状态，但是one-hot需要8维）</li><li>可以在嵌入空间赋予向量物理意义，使得向量之间可以有效的比较相似性，比如常见的在嵌入空间做余弦相似度。</li><li>避免one-hot的扩充和维度不对应问题</li></ul><p>具体做embedding的方法，目前已经多不胜数。最为经典的还是word2vec系列，并且近几年深度学习推荐系统的发展更是推进了embedding方法的扩展，graph embedding已经在推荐系统领域得到了广泛应用，在graph中可以灵活的添加side-information，甚至直接结合knowledge-graph，使得embedding的语义信息越来越丰富。</p>]]></content>
+    
+    
+    <summary type="html">离散化与稠密化的动机以及优劣分析</summary>
+    
+    
+    
+    <category term="机器学习" scheme="http://woody5962.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="机器学习" scheme="http://woody5962.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="向量表征" scheme="http://woody5962.github.io/tags/%E5%90%91%E9%87%8F%E8%A1%A8%E5%BE%81/"/>
+    
+  </entry>
   
   <entry>
     <title>元学习简介</title>
@@ -259,29 +282,6 @@
   </entry>
   
   <entry>
-    <title>粒子群优化算法</title>
-    <link href="http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
-    <id>http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</id>
-    <published>2019-09-18T16:00:00.000Z</published>
-    <updated>2021-07-12T04:05:11.106Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="背景">背景</h2><p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p><p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p><h2 id="核心公式">核心公式</h2><p><img src="../images/pso1.png" /></p><h2 id="参数解释">参数解释</h2><p><img src="../images/pso2.png" /></p><h2 id="个人理解">个人理解</h2><p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>]]></content>
-    
-    
-    <summary type="html">粒子群优化算法的背景、原理以及一些个人理解</summary>
-    
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="粒子群算法" scheme="http://woody5962.github.io/tags/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>禁忌搜索算法</title>
     <link href="http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/"/>
     <id>http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/</id>
@@ -303,6 +303,29 @@
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
     <category term="搜索算法" scheme="http://woody5962.github.io/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>粒子群优化算法</title>
+    <link href="http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</id>
+    <published>2019-09-18T16:00:00.000Z</published>
+    <updated>2021-07-12T04:05:11.106Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景">背景</h2><p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p><p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p><h2 id="核心公式">核心公式</h2><p><img src="../images/pso1.png" /></p><h2 id="参数解释">参数解释</h2><p><img src="../images/pso2.png" /></p><h2 id="个人理解">个人理解</h2><p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>]]></content>
+    
+    
+    <summary type="html">粒子群优化算法的背景、原理以及一些个人理解</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="粒子群算法" scheme="http://woody5962.github.io/tags/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

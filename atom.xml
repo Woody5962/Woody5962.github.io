@@ -188,29 +188,6 @@
   </entry>
   
   <entry>
-    <title>爬山法</title>
-    <link href="http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
-    <id>http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/</id>
-    <published>2019-09-21T16:00:00.000Z</published>
-    <updated>2021-07-01T11:02:31.034Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="算法思想">算法思想</h2><p>爬山法假设当前解和周围的解是有变化规律的，如，当前解得下方有一个代价较小的解，则我们就认为，沿着这个方向走，解会越来越小。</p><p>该算法将搜索过程比作爬山过程，在没有任何有关山顶的其他信息的情况下，沿着高度增加的方向爬。如果相邻状态没有比当前值更高，则算法停止，认为当前值即为顶峰。</p><h2 id="算法步骤">算法步骤</h2><ol type="1"><li>设置初始状态n=s0为当前状态;</li><li>如果当前状态已达标，算法结束，搜索成功;</li><li>获取当前状态n的若干个临近状态m,计算这些h(m), nextn=min{h(m)}；</li><li>IF h(n) &gt; h(nextn) THEN n:=nextn; ELSE 取当前状态为最佳状态并退出;</li><li>GOTO 2步;</li></ol><p>实际操作中：</p><ul><li><p>循环改变解的每一个值产生一个临近解的列表</p></li><li><p>对所有的临近解计算代价并排序，选择代价符合要求的的解</p></li></ul><p>对于单峰来说，必定能找到最优点。</p>]]></content>
-    
-    
-    <summary type="html">爬山法的思想和算法步骤</summary>
-    
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="爬山法" scheme="http://woody5962.github.io/tags/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>模拟退火算法</title>
     <link href="http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
     <id>http://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/</id>
@@ -230,6 +207,29 @@
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
     <category term="模拟退火算法" scheme="http://woody5962.github.io/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬山法</title>
+    <link href="http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E7%88%AC%E5%B1%B1%E6%B3%95/</id>
+    <published>2019-09-21T16:00:00.000Z</published>
+    <updated>2021-07-01T11:02:31.034Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="算法思想">算法思想</h2><p>爬山法假设当前解和周围的解是有变化规律的，如，当前解得下方有一个代价较小的解，则我们就认为，沿着这个方向走，解会越来越小。</p><p>该算法将搜索过程比作爬山过程，在没有任何有关山顶的其他信息的情况下，沿着高度增加的方向爬。如果相邻状态没有比当前值更高，则算法停止，认为当前值即为顶峰。</p><h2 id="算法步骤">算法步骤</h2><ol type="1"><li>设置初始状态n=s0为当前状态;</li><li>如果当前状态已达标，算法结束，搜索成功;</li><li>获取当前状态n的若干个临近状态m,计算这些h(m), nextn=min{h(m)}；</li><li>IF h(n) &gt; h(nextn) THEN n:=nextn; ELSE 取当前状态为最佳状态并退出;</li><li>GOTO 2步;</li></ol><p>实际操作中：</p><ul><li><p>循环改变解的每一个值产生一个临近解的列表</p></li><li><p>对所有的临近解计算代价并排序，选择代价符合要求的的解</p></li></ul><p>对于单峰来说，必定能找到最优点。</p>]]></content>
+    
+    
+    <summary type="html">爬山法的思想和算法步骤</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="爬山法" scheme="http://woody5962.github.io/tags/%E7%88%AC%E5%B1%B1%E6%B3%95/"/>
     
   </entry>
   
@@ -307,6 +307,29 @@
   </entry>
   
   <entry>
+    <title>粒子群优化算法</title>
+    <link href="http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
+    <id>http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</id>
+    <published>2019-09-18T16:00:00.000Z</published>
+    <updated>2021-07-12T04:05:11.106Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景">背景</h2><p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p><p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p><h2 id="核心公式">核心公式</h2><p><img src="../images/pso1.png" /></p><h2 id="参数解释">参数解释</h2><p><img src="../images/pso2.png" /></p><h2 id="个人理解">个人理解</h2><p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>]]></content>
+    
+    
+    <summary type="html">粒子群优化算法的背景、原理以及一些个人理解</summary>
+    
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="粒子群算法" scheme="http://woody5962.github.io/tags/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>禁忌搜索算法</title>
     <link href="http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/"/>
     <id>http://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/</id>
@@ -328,29 +351,6 @@
     <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
     
     <category term="搜索算法" scheme="http://woody5962.github.io/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>粒子群优化算法</title>
-    <link href="http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
-    <id>http://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</id>
-    <published>2019-09-18T16:00:00.000Z</published>
-    <updated>2021-07-12T04:05:11.106Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="背景">背景</h2><p>假设有一群鸟，在随机搜索食物，在搜索区域内只有一块儿食物，一开始时所有的鸟儿都不知道食物所在的方位，但它们能够知道自己离食物有多远，以及它们能够记住在自己飞过的路程当中距离食物最近的位置，同时它们也能够知道鸟群中所有鸟儿经过的路程当中，离食物最近的位置。那每一只鸟儿将如何去寻找食物呢？简单来说，每一只鸟儿在当前位置的基础上，如何做出决策，下一步向哪里飞呢？实际，每只鸟儿将综合自身的经验，以及群体的经验来在做出下一步飞向哪里的决策，即每只鸟儿将根据自己所经过的路程中离食物最近的位置以及鸟群中所有鸟儿经过的路程当中离食物最近的位置来做出决策，决定下一步自己向哪里飞。</p><p>在粒子群算法中，粒子的位置对应于原问题的解。粒子的适应值就是将粒子的位置（对应于原问题的解）带入到目标函数中所得到的目标函数值。粒子的速度决定粒子下一步向哪里飞以及飞多远。</p><h2 id="核心公式">核心公式</h2><p><img src="../images/pso1.png" /></p><h2 id="参数解释">参数解释</h2><p><img src="../images/pso2.png" /></p><h2 id="个人理解">个人理解</h2><p>粒子群算法整合了个体与整体的智慧，在“信息素”更新的时候，综合考虑了个体和整体在过去的发现。调整参数可以避免陷入局部最优，同时也可以决定对个体或者整体的依赖程度。个人认为，整体越大，对整体的依赖程度就要越大，这个依赖程度应该和粒子数量成正相关关系。</p>]]></content>
-    
-    
-    <summary type="html">粒子群优化算法的背景、原理以及一些个人理解</summary>
-    
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/categories/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="启发式算法" scheme="http://woody5962.github.io/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="粒子群算法" scheme="http://woody5962.github.io/tags/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

@@ -66,40 +66,6 @@
       </tags>
   </entry>
   <entry>
-    <title>启发式算法概述</title>
-    <url>/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>一个基于直观或经验构造的算法，在可接受的花费（计算时间和空间）下给出待解决组合优化问题每一个实例的一个可行解，该可行解与最优解的偏离程度一般不能被预计。</p>
-<p>现阶段，启发式算法以仿自然体算法为主，主要有蚁群算法、模拟退火法、神经网络等。</p>
-<p>个人理解，所谓启发就是，没有精确的数学公式得到直接解的情况下，告诉机器该如何去发现指导信息，进而根据指导信息去寻找解。</p>
-<h2 id="元启发式算法"><a href="#元启发式算法" class="headerlink" title="元启发式算法"></a>元启发式算法</h2><ul>
-<li><a href="https://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/">模拟退火算法</a></li>
-<li>遗传算法</li>
-<li>列表搜索算法</li>
-<li>进化规划</li>
-<li><a href="https://woody5962.github.io/%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/">进化算法</a><ul>
-<li>进化策略</li>
-<li>蚁群算法</li>
-</ul>
-</li>
-<li>人工神经网络</li>
-<li><a href="https://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/">禁忌搜索</a></li>
-<li><a href="https://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/">粒子群优化</a></li>
-</ul>
-<h2 id="超启发式算法"><a href="#超启发式算法" class="headerlink" title="超启发式算法"></a>超启发式算法</h2><ul>
-<li>基于随机选择的超启发式算法</li>
-<li>基于贪心策略的超启发式算法</li>
-<li>基于元启发式算法的超启发式算法</li>
-<li>基于学习的超启发式算法</li>
-</ul>
-]]></content>
-      <categories>
-        <category>启发式算法</category>
-      </categories>
-      <tags>
-        <tag>启发式算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>元学习简介</title>
     <url>/%E5%85%83%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>说白了，就是学习一个meta- knowledge，使用这个knowledge去快速适应新的任务。</p>
@@ -246,6 +212,40 @@
       </tags>
   </entry>
   <entry>
+    <title>启发式算法概述</title>
+    <url>/%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>一个基于直观或经验构造的算法，在可接受的花费（计算时间和空间）下给出待解决组合优化问题每一个实例的一个可行解，该可行解与最优解的偏离程度一般不能被预计。</p>
+<p>现阶段，启发式算法以仿自然体算法为主，主要有蚁群算法、模拟退火法、神经网络等。</p>
+<p>个人理解，所谓启发就是，没有精确的数学公式得到直接解的情况下，告诉机器该如何去发现指导信息，进而根据指导信息去寻找解。</p>
+<h2 id="元启发式算法"><a href="#元启发式算法" class="headerlink" title="元启发式算法"></a>元启发式算法</h2><ul>
+<li><a href="https://woody5962.github.io/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E7%AE%97%E6%B3%95/">模拟退火算法</a></li>
+<li>遗传算法</li>
+<li>列表搜索算法</li>
+<li>进化规划</li>
+<li><a href="https://woody5962.github.io/%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0/">进化算法</a><ul>
+<li>进化策略</li>
+<li>蚁群算法</li>
+</ul>
+</li>
+<li>人工神经网络</li>
+<li><a href="https://woody5962.github.io/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2/">禁忌搜索</a></li>
+<li><a href="https://woody5962.github.io/%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/">粒子群优化</a></li>
+</ul>
+<h2 id="超启发式算法"><a href="#超启发式算法" class="headerlink" title="超启发式算法"></a>超启发式算法</h2><ul>
+<li>基于随机选择的超启发式算法</li>
+<li>基于贪心策略的超启发式算法</li>
+<li>基于元启发式算法的超启发式算法</li>
+<li>基于学习的超启发式算法</li>
+</ul>
+]]></content>
+      <categories>
+        <category>启发式算法</category>
+      </categories>
+      <tags>
+        <tag>启发式算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>禁忌搜索算法</title>
     <url>/%E7%A6%81%E5%BF%8C%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p><img src="../images/jinji1.png"><br>通过保持一个禁忌表，以禁忌长度进行禁忌，遵守禁忌准则和藐视准则进行全局搜索。</p>
@@ -267,6 +267,52 @@
       <tags>
         <tag>启发式算法</tag>
         <tag>搜索算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>离散化与稠密化</title>
+    <url>/%E7%A6%BB%E6%95%A3%E5%8C%96%E4%B8%8E%E7%A8%A0%E5%AF%86%E5%8C%96/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>离散化与稠密化是机器学习领域的两个重要概念，虽然不是互逆的概念，但是二者却有共通之处。</p>
+<p>离散化的本质是将连续型数据分段，而稠密化的本质是降低表征维度。</p>
+<p>前者是在单一维度特征内部进行”降维“，而后者是在不同特征之间进行实打实的降维。</p>
+<p>下面对这两个概念分别进行介绍。</p>
+<h2 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h2><p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性），这样常常需要将连续属性变换成分类属性。</p>
+<p>另外，如果一个分类属性（或特征）具有大量不同值，或者某些值出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的，具体优点分析如下：</p>
+<ul>
+<li>避免one-hot场景下频繁扩充维度，并且容易造成维度不匹配的问题</li>
+<li>离散化后的特征对异常数据有很强的鲁棒性，比如我们可以把异常数据归并到一类里面，给一个统一的值，避免对结果造成过大的干扰。</li>
+<li>离散化之后可以有效的进行特征交叉，提升模型表达能力</li>
+<li>减轻过拟合风险，提升模型稳定性。比如31岁和30岁并没有太大的区别，不能因为长了一岁就对结果有了明显的影响；并且对于逻辑回归这种模型来说，离散化会减少参数量，显式的简化了模型，减轻了过拟合。</li>
+</ul>
+<h3 id="无监督离散化"><a href="#无监督离散化" class="headerlink" title="无监督离散化"></a>无监督离散化</h3><ul>
+<li>等距离散化</li>
+<li>等频离散化</li>
+<li>基于聚类分析的离散化（先聚类，再合并（自底向上）或分裂（自顶向下），达到预定的簇个数）</li>
+<li>基于正态3σ的离散化</li>
+</ul>
+<h3 id="有监督离散化"><a href="#有监督离散化" class="headerlink" title="有监督离散化"></a>有监督离散化</h3><ul>
+<li>基于信息增益的离散化（自顶向下）</li>
+<li>基于卡方的离散化（自底向上，根据不同区间的类分布相似度进行聚合，相似度越高，卡方值越小）</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><img src="../images/li1.png"></p>
+<h2 id="稠密化"><a href="#稠密化" class="headerlink" title="稠密化"></a>稠密化</h2><p>稠密化在深度学习中有一个更常见的称呼——Embedding。一般来说，我们稠密化的对象是稀疏向量，最常见的是one-hot向量。</p>
+<p>举一个简单的例子，在NLP中，我们会遇到多种one-hot向量，比如单词的原始表征、tf-idf表征等等，动辄就几十万维。对于这种表征，如果不进行稠密化，对空间复杂度和时间复杂度都是一个很大的考验。</p>
+<p>将其稠密化为embedding之后，起码有如下优势：</p>
+<ul>
+<li>可以在不丢失信息的情况下实现降维，降低空间复杂度和时间复杂度。（众所周知，3维就可以表征8个状态，但是one-hot需要8维）</li>
+<li>可以在嵌入空间赋予向量物理意义，使得向量之间可以有效的比较相似性，比如常见的在嵌入空间做余弦相似度。</li>
+<li>避免one-hot的扩充和维度不对应问题</li>
+</ul>
+<p>具体做embedding的方法，目前已经多不胜数。最为经典的还是word2vec系列，并且近几年深度学习推荐系统的发展更是推进了embedding方法的扩展，graph embedding已经在推荐系统领域得到了广泛应用，在graph中可以灵活的添加side-information，甚至直接结合knowledge-graph，使得embedding的语义信息越来越丰富。</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+        <category>数据预处理</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>数据预处理</tag>
+        <tag>特征表示</tag>
       </tags>
   </entry>
   <entry>
@@ -347,52 +393,6 @@
       <tags>
         <tag>机器学习</tag>
         <tag>因果推断</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>离散化与稠密化</title>
-    <url>/%E7%A6%BB%E6%95%A3%E5%8C%96%E4%B8%8E%E7%A8%A0%E5%AF%86%E5%8C%96/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>离散化与稠密化是机器学习领域的两个重要概念，虽然不是互逆的概念，但是二者却有共通之处。</p>
-<p>离散化的本质是将连续型数据分段，而稠密化的本质是降低表征维度。</p>
-<p>前者是在单一维度特征内部进行”降维“，而后者是在不同特征之间进行实打实的降维。</p>
-<p>下面对这两个概念分别进行介绍。</p>
-<h2 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h2><p>有些数据挖掘算法，特别是某些分类算法（如朴素贝叶斯），要求数据是分类属性形式（类别型属性），这样常常需要将连续属性变换成分类属性。</p>
-<p>另外，如果一个分类属性（或特征）具有大量不同值，或者某些值出现不频繁，则对于某些数据挖掘任务，通过合并某些值减少类别的数目可能是有益的，具体优点分析如下：</p>
-<ul>
-<li>避免one-hot场景下频繁扩充维度，并且容易造成维度不匹配的问题</li>
-<li>离散化后的特征对异常数据有很强的鲁棒性，比如我们可以把异常数据归并到一类里面，给一个统一的值，避免对结果造成过大的干扰。</li>
-<li>离散化之后可以有效的进行特征交叉，提升模型表达能力</li>
-<li>减轻过拟合风险，提升模型稳定性。比如31岁和30岁并没有太大的区别，不能因为长了一岁就对结果有了明显的影响；并且对于逻辑回归这种模型来说，离散化会减少参数量，显式的简化了模型，减轻了过拟合。</li>
-</ul>
-<h3 id="无监督离散化"><a href="#无监督离散化" class="headerlink" title="无监督离散化"></a>无监督离散化</h3><ul>
-<li>等距离散化</li>
-<li>等频离散化</li>
-<li>基于聚类分析的离散化（先聚类，再合并（自底向上）或分裂（自顶向下），达到预定的簇个数）</li>
-<li>基于正态3σ的离散化</li>
-</ul>
-<h3 id="有监督离散化"><a href="#有监督离散化" class="headerlink" title="有监督离散化"></a>有监督离散化</h3><ul>
-<li>基于信息增益的离散化（自顶向下）</li>
-<li>基于卡方的离散化（自底向上，根据不同区间的类分布相似度进行聚合，相似度越高，卡方值越小）</li>
-</ul>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><img src="../images/li1.png"></p>
-<h2 id="稠密化"><a href="#稠密化" class="headerlink" title="稠密化"></a>稠密化</h2><p>稠密化在深度学习中有一个更常见的称呼——Embedding。一般来说，我们稠密化的对象是稀疏向量，最常见的是one-hot向量。</p>
-<p>举一个简单的例子，在NLP中，我们会遇到多种one-hot向量，比如单词的原始表征、tf-idf表征等等，动辄就几十万维。对于这种表征，如果不进行稠密化，对空间复杂度和时间复杂度都是一个很大的考验。</p>
-<p>将其稠密化为embedding之后，起码有如下优势：</p>
-<ul>
-<li>可以在不丢失信息的情况下实现降维，降低空间复杂度和时间复杂度。（众所周知，3维就可以表征8个状态，但是one-hot需要8维）</li>
-<li>可以在嵌入空间赋予向量物理意义，使得向量之间可以有效的比较相似性，比如常见的在嵌入空间做余弦相似度。</li>
-<li>避免one-hot的扩充和维度不对应问题</li>
-</ul>
-<p>具体做embedding的方法，目前已经多不胜数。最为经典的还是word2vec系列，并且近几年深度学习推荐系统的发展更是推进了embedding方法的扩展，graph embedding已经在推荐系统领域得到了广泛应用，在graph中可以灵活的添加side-information，甚至直接结合knowledge-graph，使得embedding的语义信息越来越丰富。</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-        <category>数据预处理</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>数据预处理</tag>
-        <tag>特征表示</tag>
       </tags>
   </entry>
   <entry>
@@ -617,6 +617,32 @@
       </tags>
   </entry>
   <entry>
+    <title>集束搜索</title>
+    <url>/%E9%9B%86%E6%9D%9F%E6%90%9C%E7%B4%A2/</url>
+    <content><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>举例说明，在NLP领域中，经常会涉及机器翻译结果的搜索，比如在decoder中，我们可以使用贪心策略每次选择softmax值最高的，但是由于贪心解往往达不到最优，所以我们放松贪心约束，每次选择最优的k个，k便是集束宽度，这样对解的搜索叫做集束搜索。</p>
+<h2 id="过程示例"><a href="#过程示例" class="headerlink" title="过程示例"></a>过程示例</h2><p>假设字典为[a,b,c]，beam size选择2，则如下图有：</p>
+<p><img src="../images/jishu1.png"></p>
+<ol>
+<li><p>在生成第1个词的时候，选择概率最大的2个词，那么当前序列就是a或b</p>
+</li>
+<li><p>生成第2个词的时候，我们将当前序列a或b，分别与字典中的所有词进行组合，得到新的6个序列aa ab ac ba bb bc,然后从其中选择2个概率最高的，作为当前序列，即ab或bb</p>
+</li>
+</ol>
+<p>不断重复这个过程，直到遇到结束符为止。最终输出2个概率最高的序列。</p>
+<p>显然集束搜索属于贪心算法，不能保证一定能够找到全局最优解，因为考虑到搜索空间太大，而采用一个相对的较优解。</p>
+<p>而贪心搜索由于每次考虑当下词的概率，而通常英文中有些常用结构，比如吴恩达网课中的例子：“is going”，出现概率较大，会导致模型最终生成的句子过于冗余，如“is visiting”和“is going to be visiting”。</p>
+<p>贪心搜索可以认为beam size为1时的集束搜索特例。</p>
+]]></content>
+      <categories>
+        <category>启发式算法</category>
+        <category>搜索算法</category>
+      </categories>
+      <tags>
+        <tag>启发式算法</tag>
+        <tag>搜索算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>集成学习概述</title>
     <url>/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h2 id="为什么要用集成学习"><a href="#为什么要用集成学习" class="headerlink" title="为什么要用集成学习"></a>为什么要用集成学习</h2><ol>
@@ -772,32 +798,6 @@
       <tags>
         <tag>机器学习</tag>
         <tag>集成学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>集束搜索</title>
-    <url>/%E9%9B%86%E6%9D%9F%E6%90%9C%E7%B4%A2/</url>
-    <content><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>举例说明，在NLP领域中，经常会涉及机器翻译结果的搜索，比如在decoder中，我们可以使用贪心策略每次选择softmax值最高的，但是由于贪心解往往达不到最优，所以我们放松贪心约束，每次选择最优的k个，k便是集束宽度，这样对解的搜索叫做集束搜索。</p>
-<h2 id="过程示例"><a href="#过程示例" class="headerlink" title="过程示例"></a>过程示例</h2><p>假设字典为[a,b,c]，beam size选择2，则如下图有：</p>
-<p><img src="../images/jishu1.png"></p>
-<ol>
-<li><p>在生成第1个词的时候，选择概率最大的2个词，那么当前序列就是a或b</p>
-</li>
-<li><p>生成第2个词的时候，我们将当前序列a或b，分别与字典中的所有词进行组合，得到新的6个序列aa ab ac ba bb bc,然后从其中选择2个概率最高的，作为当前序列，即ab或bb</p>
-</li>
-</ol>
-<p>不断重复这个过程，直到遇到结束符为止。最终输出2个概率最高的序列。</p>
-<p>显然集束搜索属于贪心算法，不能保证一定能够找到全局最优解，因为考虑到搜索空间太大，而采用一个相对的较优解。</p>
-<p>而贪心搜索由于每次考虑当下词的概率，而通常英文中有些常用结构，比如吴恩达网课中的例子：“is going”，出现概率较大，会导致模型最终生成的句子过于冗余，如“is visiting”和“is going to be visiting”。</p>
-<p>贪心搜索可以认为beam size为1时的集束搜索特例。</p>
-]]></content>
-      <categories>
-        <category>启发式算法</category>
-        <category>搜索算法</category>
-      </categories>
-      <tags>
-        <tag>启发式算法</tag>
-        <tag>搜索算法</tag>
       </tags>
   </entry>
 </search>
